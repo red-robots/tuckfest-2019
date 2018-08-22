@@ -33,7 +33,8 @@ get_header(); ?>
 				} elseif( $term == 'sunday' ) {
 					$slug = 'sunday-line-up';
 				}
-				$url = get_bloginfo('url').'/tuckfest-music/'.$slug;
+				$hash = sanitize_title_with_dashes(get_the_title());
+				$url = get_bloginfo('url').'/tuckfest-music/'.$slug.'/#'.$hash;
 			?>
 			<li>
 				<a href="<?php echo $url; ?>">

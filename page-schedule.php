@@ -47,18 +47,9 @@ get_header(); ?>
 	));
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
-	include( locate_template( 'inc/schedule-links.php', false, false ) ); 
+		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
-
-	?>
-
-		<li>
-			<a href="<?php echo $url; ?>">
-			<?php the_title(); ?>
-			</a>
-		</li>
-
-<?php endwhile; ?>
+	 endwhile; ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
@@ -78,16 +69,9 @@ get_header(); ?>
 	));
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
-	include( locate_template( 'inc/schedule-links.php', false, false ) ); 
-	?>
-
-		<li>
-			<a href="<?php echo $url; ?>">
-			<?php the_title(); ?>
-			</a>
-		</li>
-
-<?php endwhile; ?>
+	include( locate_template( 'inc/schedule-links.php', false, false ) );  
+	
+	 endwhile; ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
@@ -108,15 +92,8 @@ get_header(); ?>
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
 	include( locate_template( 'inc/schedule-links.php', false, false ) ); 
-	?>
-
-		<li>
-			<a href="<?php echo $url; ?>">
-			<?php the_title(); ?>
-			</a>
-		</li>
-
-<?php endwhile; ?>
+	
+	 endwhile; ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
@@ -137,16 +114,8 @@ get_header(); ?>
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
-
-	?>
-
-		<li>
-			<a href="<?php echo $url; ?>">
-			<?php the_title(); ?>
-			</a>
-		</li>
-
-<?php endwhile; ?>
+	
+	 endwhile; ?>
 <?php endif; ?>
 	</div>
 </section>

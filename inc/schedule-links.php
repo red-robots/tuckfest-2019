@@ -44,4 +44,11 @@ if( $postType == 'music' ) {
 } else {
 	
 	$url = get_bloginfo('url').'/'.$taxSlug.'/'.$term.'/#'.$hash;
-}
+} ?>
+
+
+<li>
+	<a href="<?php echo $url; ?>">
+	<?php the_title(); ?>
+	</a>
+</li>
