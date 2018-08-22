@@ -3,19 +3,19 @@
 	display: block;
 	text-align: center;
 	width: 100%;
-	background-color: #fff;
+	border-top: 4px solid $color-gold;
+	border-bottom: 4px solid $color-gold;
 	@media screen and (min-width: $tabwidth) {
-		clear: none;
-		width: auto;
 		
+		padding: 10px 0;
 
 	}
 	@media screen and (min-width: $deskwidth) {
-		text-align: left;
+		
 	}
 	.menu {
 		@include transition(all ease 1s);
-		overflow: hidden;
+		// overflow: hidden;
 		display: block;
 	}
 	&.toggled .menu {
@@ -29,7 +29,7 @@
 	}
 
 	ul {
-		display: none;
+		// display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -38,22 +38,40 @@
 		}
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			
 			float: left;
 			position: absolute;
-			top: 1.5em;
-			left: -999em;
+			top: 2.5em;
+			left: 0%;
+			display: block;
 			z-index: 99999;
+			max-height: 0px;
+			width: 250px;
 
+			background: rgba($color-tan,.7);
+			overflow: hidden;
+			@include transition(all ease .8s);
 			ul {
-				left: -999em;
+				// left: -999em;
 				top: 0;
 			}
 
 			li {
+				font-size: 10pt;
+				border-left: 0;
+				border-bottom: 2px dashed $color-gold;
+				text-align: left;
+				width: 90%;
+				float: left;
+				line-height: 3.5;
+				margin: 0 5%;
+				&:first-of-type {
+					border-bottom: 2px dashed $color-gold;
+				}
 				&:hover > ul,
 				&.focus > ul {
-					left: 100%;
+					// left: 100%;
+					max-height: 1000px;
 				}
 				@media screen and (min-width: $tabwidth) {
 		
@@ -65,7 +83,8 @@
 
 
 			a {
-				width: 200px;
+				width: 100%;
+				display: block;
 				@media screen and (min-width: $tabwidth) {
 		
 				}
@@ -85,7 +104,9 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			// left: 0;
+			max-height: 1000px;
+
 		}
 	}
 	li {
@@ -98,10 +119,11 @@
 		text-transform: uppercase;
 		font-family: $font-heading;
 		font-weight: 300;
+		font-size: 17pt;
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
-			border-left: 1px solid #000;
-			line-height: 3;
+			border-left: 3px solid $color-gold;
+			line-height: 2.5;
 			width: auto;
 			// padding: 0 20px;
 			&:first-of-type {

@@ -26,3 +26,13 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+section.schedule {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	.col {
+		flex-basis: 20%;
+		background-color: #fff;
+	}
+}

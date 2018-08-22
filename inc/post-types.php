@@ -161,7 +161,7 @@ function build_taxonomies() {
     'rewrite' => true ,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array( 'slug' => 'competition_type' ),
+    'rewrite' => array( 'slug' => 'competition-type' ),
     '_builtin' => true
   ) );
 
@@ -173,11 +173,11 @@ function build_taxonomies() {
     'rewrite' => true ,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array( 'slug' => 'demo_clinic_type' ),
+    'rewrite' => array( 'slug' => 'demo-clinic-type' ),
     '_builtin' => true
   ) );
 
-  register_taxonomy( 'day', array('music', 'demo_clinic', 'competition', 'yoga'),
+  register_taxonomy( 'event_day', array('music', 'demo_clinic', 'competition', 'yoga'),
   array( 
     'hierarchical' => true, // true = acts like categories false = acts like tags
     'label' => 'Day', 
@@ -185,7 +185,7 @@ function build_taxonomies() {
     'rewrite' => true ,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array( 'slug' => 'day' ),
+    'rewrite' => array( 'slug' => 'event-day' ),
     '_builtin' => true
   ) );
   

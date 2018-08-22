@@ -1,3 +1,27 @@
+@font-face {
+	font-family: 'Futura';
+	src: url('fonts/tuckfest2018/Futura-Medium.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
+@font-face {
+	font-family: 'DCC';
+	src: url('fonts/tuckfest2018/DDCHardware-Regular.otf') format("opentype"),
+	url('fonts/tuckfest2018/DDCHardware-Regular.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
+@font-face {
+	font-family: 'Womby';
+	src: url('fonts/tuckfest2018/Womby-Regular.otf') format("opentype"),
+	url('fonts/tuckfest2018/Womby-Regular.woff') format('woff'),
+	url('fonts/tuckfest2018/Womby-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
 body,
 button,
 input,
