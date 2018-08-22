@@ -177,15 +177,15 @@ function build_taxonomies() {
     '_builtin' => true
   ) );
 
-  register_taxonomy( 'performance_day', 'music',
+  register_taxonomy( 'day', array('music', 'demo_clinic', 'competition', 'yoga'),
   array( 
     'hierarchical' => true, // true = acts like categories false = acts like tags
-    'label' => 'Performance Day', 
+    'label' => 'Day', 
     'query_var' => true, 
     'rewrite' => true ,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array( 'slug' => 'performance-day' ),
+    'rewrite' => array( 'slug' => 'day' ),
     '_builtin' => true
   ) );
   
