@@ -11,7 +11,7 @@
 
 	}
 	@media screen and (min-width: $deskwidth) {
-		
+		padding: 15px 0;
 	}
 	.menu {
 		@include transition(all ease 1s);
@@ -41,7 +41,7 @@
 			
 			float: left;
 			position: absolute;
-			top: 2.5em;
+			top: 2em;
 			left: 0%;
 			display: block;
 			z-index: 99999;
@@ -123,12 +123,13 @@
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
 			border-left: 3px solid $color-gold;
-			line-height: 2.5;
+			line-height: 1.3;
 			width: auto;
 			// padding: 0 20px;
 			&:first-of-type {
 				border: 0;
 			}
+			font-size: 1.5vw;
 		}
 		@media screen and (min-width: $deskwidth) {
 			// padding: 0 30px;

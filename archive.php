@@ -8,16 +8,19 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+<div class="content-wrapper">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+			<h1 class="entry-title">
+				<?php single_term_title(); ?>
+			</h1>
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -31,15 +34,21 @@ get_header(); ?>
 			?>
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					</header><!-- .entry-header -->
+					<div class="featured-image">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<div class="copy">
+						<header class="entry-header">
+							<?php the_title( '<h1 class="">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
 
-					<div class="entry-content">
-						<?php
-							the_content();
-						?>
-					</div><!-- .entry-content -->
+						<div class="entry-content">
+							<?php
+								the_content();
+							?>
+						</div><!-- .entry-content -->
+					</div>
+					
 
 					
 				</article><!-- #post-## -->
@@ -50,7 +59,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
 // get_sidebar();
 get_footer();

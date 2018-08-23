@@ -1,6 +1,21 @@
-<?php
-$i++;
+<?php 
 $queried_object = get_queried_object();
+$i++; 
+
+if( $i == 1 ) {
+?>
+
+	<div class="image">
+		<?php get_template_part('inc/banner'); ?>
+		<div class="icon">
+			<img src="<?php echo get_bloginfo('template_url'); ?>/images/W_button.png">
+		</div>
+	</div>
+	<h2><?php echo $queried_object->name; ?></h2>
+
+<?php }
+
+
 
 $thurTime = get_field('thursday_time_p');
 $thurEndTime = get_field('thursday_time_p_end');

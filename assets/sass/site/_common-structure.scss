@@ -1,4 +1,7 @@
 
+body {
+	font-family: $font-copy;
+}
 .clear {clear: both;}
 .wrapper {
 	width: 100%;
@@ -9,11 +12,23 @@
 		width: 100%;
 	}
 	@media screen and (min-width: $deskwidth) {
-		width: 1200px;
+		width: 90%;
 		padding: 0px;
 	}
 }
-
+.content-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 940px;
+		padding: 0px;
+	}
+}
 .content-area {
 	width: 100%;
 	margin: 0px auto;
@@ -69,6 +84,34 @@
 	@media screen and (min-width: $deskwidth) {
 		
 	}
+}
+article {
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 2px dashed $color-blue;
+	@media screen and (min-width: $tabwidth) {
+
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
+	.featured-image {
+		width: 21.7%;
+		display: inline-block;
+		margin: 1em 3% 0 0;
+	}
+	.copy {
+		width: 74%;
+		display: inline-block;
+		h1 {
+			text-align: left;
+			font-size: 14pt;
+	    	letter-spacing: 0.20em;
+	    	text-transform: uppercase;
+	    	color: $color-gold;
+		}
+	}
+
 }
 .site-footer {
 	width: 100%;

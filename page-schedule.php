@@ -9,21 +9,23 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post(); ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
 
-			endwhile; // End of the loop.
-			?>
+			<?php endwhile; // End of the loop.?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -31,8 +33,8 @@ get_header(); ?>
 
 <section class="schedule">
 	<div class="col">
-		<h2>Thursday</h2>
-		<?php
+
+	<?php
 	
 	$i=0; 
 
@@ -60,7 +62,7 @@ get_header(); ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
-		<h2>Friday</h2>
+		
 		<?php
 		$i=0; 
 	
@@ -89,7 +91,7 @@ get_header(); ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
-		<h2>Saturday</h2>
+		
 		<?php
 		$i=0; 
 	
@@ -118,7 +120,7 @@ get_header(); ?>
 <?php endif; ?>
 	</div>
 	<div class="col">
-		<h2>Sunday</h2>
+		
 		<?php
 		$i=0; 
 	

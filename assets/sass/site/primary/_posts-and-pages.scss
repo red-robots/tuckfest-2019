@@ -37,6 +37,27 @@ section.schedule {
 		color: $color-gold;
 		text-align: center;
 		font-size: 11pt;
+		.image {
+			width: 100%;
+			position: relative;
+			padding: 3px;
+			img {
+				width: 100%;
+			}
+		}
+		.icon {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+		h2 {
+			text-transform: uppercase;
+			font-family: $font-heading;
+		}
 		.time {
 			color: #fff;
 		}
