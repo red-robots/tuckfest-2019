@@ -1,4 +1,6 @@
-<?php 
+<?php
+$i++;
+$queried_object = get_queried_object();
 
 $thurTime = get_field('thursday_time_p');
 $thurEndTime = get_field('thursday_time_p_end');
@@ -9,22 +11,34 @@ $satEndTime = get_field('saturday_time_p_end');
 $sunTime = get_field('sunday_time_p');
 $sunEndTime = get_field('sunday_time_p_end');
 
-$queried_object = get_queried_object();
+
 // echo '<pre>';
 // print_r($queried_object);
 // echo '</pre>';
 if( $queried_object->slug == 'thursday' ) {
 	$startTime = $thurTime;
 	$EndTime = $thurEndTime;
+	$regStart = get_field('thursday_start', 'option');
+	$regEnd = get_field('thursday_end', 'option');
+	$regLink = get_field('thursday_time_link', 'option');
 }elseif( $queried_object->slug == 'friday' ) {
 	$startTime = $friTime;
 	$EndTime = $friEndTime;
+	$regStart = get_field('friday_start', 'option');
+	$regEnd = get_field('friday_end', 'option');
+	$regLink = get_field('friday_start', 'option');
 }elseif( $queried_object->slug == 'saturday' ) {
 	$startTime = $satTime;
 	$EndTime = $satEndTime;
+	$regStart = get_field('saturday_start', 'option');
+	$regEnd = get_field('saturday_end', 'option');
+	$regLink = get_field('saturday_start', 'option');
 }elseif( $queried_object->slug == 'sunday' ) {
 	$startTime = $sunTime;
 	$EndTime = $sunEndTime;
+	$regStart = get_field('sunday_start', 'option');
+	$regEnd = get_field('sunday_end', 'option');
+	$regLink = get_field('sunday_start', 'option');
 }
 
 $theID = get_the_ID();
@@ -46,7 +60,7 @@ if( $postType == 'music') {
 if( $tax != '' ) {
 	$terms = get_the_terms($theID, $tax );
 
-	$term = $terms[0]->slug;
+	if($terms){$term = $terms[0]->slug;}
 
 	$hash = sanitize_title_with_dashes(get_the_title());
 	
@@ -71,10 +85,21 @@ if( $postType == 'music' ) {
 } else {
 	
 	$url = get_bloginfo('url').'/'.$taxSlug.'/'.$term.'/#'.$hash;
-} ?>
+} 
 
 
+if( $i ==1 ) {
+
+?>
+	<li>
+		<a href="<?php echo $regLink; ?>">Tuck Fest Registration & Packet Pick-up</a>
+		<div class="time">
+			<?php echo $regStart.' - '.$regEnd;  ?>
+		</div>
+	</li>
+<?php } ?>
 <li>
+
 	<a href="<?php echo $url; ?>">
 		<?php the_title(); ?>
 	</a>

@@ -33,6 +33,9 @@ get_header(); ?>
 	<div class="col">
 		<h2>Thursday</h2>
 		<?php
+	
+	$i=0; 
+
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
@@ -55,6 +58,9 @@ get_header(); ?>
 	<div class="col">
 		<h2>Friday</h2>
 		<?php
+		$i=0; 
+	
+
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
@@ -77,6 +83,9 @@ get_header(); ?>
 	<div class="col">
 		<h2>Saturday</h2>
 		<?php
+		$i=0; 
+	
+
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
@@ -99,6 +108,9 @@ get_header(); ?>
 	<div class="col">
 		<h2>Sunday</h2>
 		<?php
+		$i=0; 
+	
+
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
