@@ -1816,7 +1816,11 @@ html[xmlns] .flexslider .slides{display:block}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
 section.schedule{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}
-section.schedule .col{-webkit-flex-basis:20%;-ms-flex-preferred-size:20%;flex-basis:20%;background-color:#fff}
+section.schedule .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%;background-color:#1a3853;color:#caae68;text-align:center;font-size:11pt}
+section.schedule .col .time{color:#fff}
+section.schedule .col a{text-decoration:none;color:#caae68;border-bottom:1px solid #1a3853;-webkit-transition:all ease .2s;transition:all ease .2s}
+section.schedule .col a:hover{border-bottom:1px solid #caae68}
+section.schedule .col li{list-style:none;margin:0 0 5px 0}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

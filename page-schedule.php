@@ -40,6 +40,10 @@ get_header(); ?>
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
 		'posts_per_page' => -1,
+		'meta_key'			=> 'thursday_time_p',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'ASC',
+		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'event_day', // your custom taxonomy
@@ -65,6 +69,10 @@ get_header(); ?>
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
 		'posts_per_page' => -1,
+		'meta_key'			=> 'friday_time_p',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'ASC',
+		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'event_day', // your custom taxonomy
@@ -90,6 +98,10 @@ get_header(); ?>
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
 		'posts_per_page' => -1,
+		'meta_key'			=> 'saturday_time_p',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'ASC',
+		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'event_day', // your custom taxonomy
@@ -115,6 +127,10 @@ get_header(); ?>
 	$wp_query->query(array(
 		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
 		'posts_per_page' => -1,
+		'meta_key'			=> 'sunday_time_p',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'ASC',
+		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'event_day', // your custom taxonomy

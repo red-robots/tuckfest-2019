@@ -32,7 +32,26 @@ section.schedule {
 	flex-direction: row;
 	justify-content: space-around;
 	.col {
-		flex-basis: 20%;
-		background-color: #fff;
+		flex-basis: 22%;
+		background-color: $color-blue;
+		color: $color-gold;
+		text-align: center;
+		font-size: 11pt;
+		.time {
+			color: #fff;
+		}
+		a {
+			text-decoration: none;
+			color: $color-gold;
+			border-bottom: 1px solid $color-blue;
+			@include transition(all ease .2s);
+			&:hover {
+				border-bottom: 1px solid $color-gold;
+			}
+		}
+		li {
+			list-style: none;
+			margin: 0 0 5px 0;
+		}
 	}
 }
