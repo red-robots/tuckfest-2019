@@ -1821,6 +1821,9 @@ section.schedule .col .time{color:#fff}
 section.schedule .col a{text-decoration:none;color:#caae68;border-bottom:1px solid #1a3853;-webkit-transition:all ease .2s;transition:all ease .2s}
 section.schedule .col a:hover{border-bottom:1px solid #caae68}
 section.schedule .col li{list-style:none;margin:0 0 5px 0}
+.tiles{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;padding:40px 0}
+.tile{width:auto;background-color:#1a3853;color:color-gold;padding:20px}
+.tile a{color:#caae68;text-decoration:none}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

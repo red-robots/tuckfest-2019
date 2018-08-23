@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -28,6 +28,9 @@ get_header(); ?>
 			}elseif(is_page(960)) {
 				$type = 'demo_clinic_type';
 				$slug = 'demo-clinic-type';
+			}elseif(is_page(2131)) {
+				$type = 'yoga_day';
+				$slug = 'yoga-day';
 			}
 			
 			$terms = get_terms( $type , array(
@@ -38,18 +41,20 @@ get_header(); ?>
 			// print_r($terms);
 			// echo '</pre>';
 
-
+				?>
+				<section class="tiles">
+				<?php
 			foreach ($terms as $term) { 
 
 				$url = get_bloginfo('url').'/'.$slug.'/'.$term->slug;
 				?>
-				<li>
+				<div class="tile">
 				<a href="<?php echo $url; ?>"><?php echo $term->name; ?></a>
 					
-				</li>
+				</div>
 			<?php }
 			?>
-
+</section>
 			<?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(

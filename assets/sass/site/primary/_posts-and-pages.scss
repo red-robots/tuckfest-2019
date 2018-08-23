@@ -55,3 +55,20 @@ section.schedule {
 		}
 	}
 }
+.tiles {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 40px 0;
+}
+.tile {
+	width: auto;
+	background-color: $color-blue;
+	color: color-gold;
+	padding: 20px;
+	a {
+		color: $color-gold;
+		text-decoration: none;
+	}
+}
