@@ -1,5 +1,32 @@
 <?php 
 
+$thurTime = get_field('thursday_time_p');
+$thurEndTime = get_field('thursday_time_p_end');
+$friTime = get_field('friday_time_p');
+$friEndTime = get_field('friday_time_p_end');
+$satTime = get_field('saturday_time_p');
+$satEndTime = get_field('saturday_time_p_end');
+$sunTime = get_field('sunday_time_p');
+$sunEndTime = get_field('sunday_time_p_end');
+
+$queried_object = get_queried_object();
+// echo '<pre>';
+// print_r($queried_object);
+// echo '</pre>';
+if( $queried_object->slug == 'thursday' ) {
+	$startTime = $thurTime;
+	$EndTime = $thurEndTime;
+}elseif( $queried_object->slug == 'friday' ) {
+	$startTime = $friTime;
+	$EndTime = $friEndTime;
+}elseif( $queried_object->slug == 'saturday' ) {
+	$startTime = $satTime;
+	$EndTime = $satEndTime;
+}elseif( $queried_object->slug == 'sunday' ) {
+	$startTime = $sunTime;
+	$EndTime = $sunEndTime;
+}
+
 $theID = get_the_ID();
 $postType = get_post_type();
 
@@ -13,8 +40,8 @@ if( $postType == 'music') {
 	$taxSlug = 'demo-clinic-type';
 	$tax = 'demo_clinic_type';
 } elseif( $postType == 'yoga') {
-	$taxSlug = 'yoga';
-	$tax = 'event_day';
+	$taxSlug = 'yoga-day';
+	$tax = 'yoga_day';
 }
 if( $tax != '' ) {
 	$terms = get_the_terms($theID, $tax );
@@ -49,6 +76,13 @@ if( $postType == 'music' ) {
 
 <li>
 	<a href="<?php echo $url; ?>">
-	<?php the_title(); ?>
+		<?php the_title(); ?>
 	</a>
+	<div class="time">
+		<?php 
+		echo $startTime; 
+		if( $EndTime != '') {
+			echo ' - '.$EndTime;
+			}?>
+	</div>
 </li>

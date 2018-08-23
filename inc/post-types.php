@@ -188,5 +188,17 @@ function build_taxonomies() {
     'rewrite' => array( 'slug' => 'event-day' ),
     '_builtin' => true
   ) );
+
+  register_taxonomy( 'yoga_day', 'yoga',
+  array( 
+    'hierarchical' => true, // true = acts like categories false = acts like tags
+    'label' => 'Yoga Day', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'yoga-day' ),
+    '_builtin' => true
+  ) );
   
 } // End build taxonomies
