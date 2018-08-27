@@ -20,7 +20,9 @@ get_header(); ?>
 		<?php
 			/* Start the Loop */
 			$wp_query = new WP_Query(array('post_status'=>'private','pagename'=>'home'));
-			if ( have_posts() ) : the_post(); get_template_part('inc/banner'); ?>
+			if ( have_posts() ) : the_post(); 
+
+				get_template_part('inc/banner'); ?>
 				
 			<?php endif; ?>
 

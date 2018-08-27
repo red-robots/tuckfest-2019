@@ -13,12 +13,20 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post(); ?>
 
-				the_content();
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
 
-			endwhile; // End of the loop.
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
 
+			<?php endwhile; // End of the loop.?>
+			<?php 
 			if(is_page(954)) {
 				$type = 'competition_type';
 				$slug = 'competition-type';
@@ -42,19 +50,26 @@ get_header(); ?>
 			// echo '</pre>';
 
 				?>
-				<section class="tiles">
+				<section class="schedule">
 				<?php
-			foreach ($terms as $term) { 
+					foreach ($terms as $term) { 
 
-				$url = get_bloginfo('url').'/'.$slug.'/'.$term->slug;
-				?>
-				<div class="tile">
-				<a href="<?php echo $url; ?>"><?php echo $term->name; ?></a>
-					
-				</div>
-			<?php }
-			?>
-</section>
+						$url = get_bloginfo('url').'/'.$slug.'/'.$term->slug;
+						?>
+							<div class="col">
+								<a href="<?php echo $url; ?>">
+									<div class="image">
+										<?php the_post_thumbnail(); ?>
+										<div class="icon">
+											<img src="<?php echo get_bloginfo('template_url'); ?>/images/W_button.png">
+										</div>
+									</div>
+									<h2><?php echo $term->name; ?></h2>
+								</a>
+							</div>
+					<?php }
+					?>
+				</section>
 			<?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(

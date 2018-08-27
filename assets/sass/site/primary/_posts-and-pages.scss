@@ -27,12 +27,25 @@
 	margin: 0 0 1.5em;
 }
 section.schedule {
+	flex-wrap: wrap;
+	.col {
+		flex-basis: 22%;
+	}
+}
+section.schedule-music {
+	flex-wrap: wrap;
+	.col {
+		flex-basis: 22%;
+	}
+}
+section.schedule,
+section.schedule-music {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	.col {
-		flex-basis: 22%;
+		padding: 0 0 30px 0;
 		background-color: $color-blue;
 		color: $color-gold;
 		text-align: center;

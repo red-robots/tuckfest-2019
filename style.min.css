@@ -1843,16 +1843,20 @@ footer.site-footer .sponsors li{width:50px}
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
-section.schedule{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}
-section.schedule .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%;background-color:#1a3853;color:#caae68;text-align:center;font-size:11pt}
-section.schedule .col .image{width:100%;position:relative;padding:3px;float:left}
-section.schedule .col .image img{width:100%}
-section.schedule .col .icon{width:50px;height:50px;position:absolute;bottom:-25px;left:0;right:0;margin:0 auto;z-index:100000}
-section.schedule .col h2{text-transform:uppercase;font-family:"DCC",sans-serif;margin:30px auto 0 auto;width:100%;float:left}
-section.schedule .col .time{color:#fff}
-section.schedule .col a{text-decoration:none;color:#caae68;border-bottom:1px solid #1a3853;-webkit-transition:all ease .2s;transition:all ease .2s}
-section.schedule .col a:hover{border-bottom:1px solid #caae68}
-section.schedule .col li{list-style:none;margin:0 0 5px 0}
+section.schedule{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
+section.schedule .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%}
+section.schedule-music{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
+section.schedule-music .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%}
+section.schedule,section.schedule-music{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}
+section.schedule .col,section.schedule-music .col{padding:0 0 30px 0;background-color:#1a3853;color:#caae68;text-align:center;font-size:11pt}
+section.schedule .col .image,section.schedule-music .col .image{width:100%;position:relative;padding:3px;float:left}
+section.schedule .col .image img,section.schedule-music .col .image img{width:100%}
+section.schedule .col .icon,section.schedule-music .col .icon{width:50px;height:50px;position:absolute;bottom:-25px;left:0;right:0;margin:0 auto;z-index:100000}
+section.schedule .col h2,section.schedule-music .col h2{text-transform:uppercase;font-family:"DCC",sans-serif;margin:30px auto 0 auto;width:100%;float:left}
+section.schedule .col .time,section.schedule-music .col .time{color:#fff}
+section.schedule .col a,section.schedule-music .col a{text-decoration:none;color:#caae68;border-bottom:1px solid #1a3853;-webkit-transition:all ease .2s;transition:all ease .2s}
+section.schedule .col a:hover,section.schedule-music .col a:hover{border-bottom:1px solid #caae68}
+section.schedule .col li,section.schedule-music .col li{list-style:none;margin:0 0 5px 0}
 .tiles{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;padding:40px 0}
 .tile{width:auto;background-color:#1a3853;color:color-gold;padding:20px}
 .tile a{color:#caae68;text-decoration:none}

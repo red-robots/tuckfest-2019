@@ -28,12 +28,25 @@ get_header(); ?>
 			if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post();
 				$hash = sanitize_title_with_dashes(get_the_title());
 			?>
-				<li>
+				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
+					<div class="featured-image">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<div class="copy">
+						<header class="entry-header">
+							<?php the_title( '<h1 class="">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
+
+						<div class="entry-content">
+							<?php
+								the_content();
+							?>
+						</div><!-- .entry-content -->
+					</div>
 					
-						<h2 id="<?php echo $hash; ?>"><?php the_title(); ?></h2>
-						<?php the_content(); ?>
+
 					
-				</li>
+				</article><!-- #post-## -->
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</main><!-- #main -->
