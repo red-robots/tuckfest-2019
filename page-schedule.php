@@ -85,7 +85,7 @@ get_header(); ?>
 	));
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
-	include( locate_template( 'inc/schedule-links.php', false, false ) );  
+		include( locate_template( 'inc/schedule-links.php', false, false ) );  
 	
 	 endwhile; ?>
 <?php endif; ?>
@@ -114,7 +114,7 @@ get_header(); ?>
 	));
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
-	include( locate_template( 'inc/schedule-links.php', false, false ) ); 
+		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
 	 endwhile; ?>
 <?php endif; ?>

@@ -28,14 +28,14 @@ get_header(); ?>
 			if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post();
 				$hash = sanitize_title_with_dashes(get_the_title());
 			?>
-			<li>
-				
-					<h2 id="<?php echo $hash; ?>"><?php the_title(); ?></h2>
-					<?php the_content(); ?>
-				
-			</li>
-		<?php endwhile; ?>
-	<?php endif; ?>
+				<li>
+					
+						<h2 id="<?php echo $hash; ?>"><?php the_title(); ?></h2>
+						<?php the_content(); ?>
+					
+				</li>
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

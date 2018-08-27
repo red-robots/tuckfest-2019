@@ -9,9 +9,14 @@ $term = get_queried_object();
 // print_r($term);
 // echo '</pre>';
 $flexslider = get_field( 'flexslider_banner', $term );
+if( is_page('home') ) {
+	$homeClass = 'home';
+} else {
+	$homeClass = '';
+}
 
 ?>
-<div id="banner">
+<div id="banner" class="<?php echo $homeClass; ?>">
 	<?php 
 	if ( $flexslider ):?>
 		<div class="flexslider">
