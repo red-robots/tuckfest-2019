@@ -77,7 +77,7 @@ get_header(); ?>
 				<div class="col">
 					<a href="<?php the_permalink(); ?>">
 						<div class="image">
-							<?php the_post_thumbnail(); ?>
+							<?php the_post_thumbnail('tile'); ?>
 						</div>
 						<div class="card">
 							<div class="wrap">

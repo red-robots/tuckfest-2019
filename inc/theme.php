@@ -25,6 +25,13 @@ function the_title_trim($title) {
 }
 add_filter('the_title', 'the_title_trim');
 /*-------------------------------------
+ new image size
+---------------------------------------*/
+
+add_image_size('tile', 350, 350, array('center', 'center'));
+
+
+/*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/
 function my_login_logo() { ?>

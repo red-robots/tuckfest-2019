@@ -46,7 +46,7 @@ get_header(); ?>
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
 					<div class="featured-image">
-						<?php the_post_thumbnail('thumbnail'); ?>
+						<?php the_post_thumbnail('tile'); ?>
 					</div>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="">', '</h1>' ); ?>

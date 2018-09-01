@@ -40,7 +40,7 @@ get_header(); ?>
 							?>
 							<div class="gal-thumb">
 								<a class="gallery" href="<?php echo $image['url']; ?>">
-									<img src="<?php echo $image['sizes']['gallery']; ?>">
+									<img src="<?php echo $image['sizes']['tile']; ?>">
 								</a>
 								
 							</div>

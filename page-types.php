@@ -74,7 +74,7 @@ get_header(); ?>
 										// echo '</pre>';
 										// include( locate_template( 'inc/banner.php', false, false ) ); 
 										?>
-										<img src="<?php echo $image['sizes']['thumbnail']; ?>">
+										<img src="<?php echo $image['sizes']['tile']; ?>">
 									</div>
 									<div class="card">
 										<div class="wrap">

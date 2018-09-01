@@ -30,7 +30,7 @@ get_header(); ?>
 			?>
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
 					<div class="featured-image">
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail('tile'); ?>
 					</div>
 					<div class="copy">
 						<header class="entry-header">
