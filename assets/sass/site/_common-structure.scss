@@ -234,6 +234,8 @@ article {
 		z-index: 100;
 		color: #fff;
 		padding: 20px 20px 20px 30px;
+		font-family: $font-copy;
+		font-weight: 200;
 		@media screen and (min-width: $tabwidth) {
 			width: 78%;
 			margin: -10% auto 30px 0;

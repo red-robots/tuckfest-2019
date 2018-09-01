@@ -1860,7 +1860,7 @@ article .featured-image img{width:100%}
 @media screen and (min-width:600px){article .entry-header{width:200%;top:8%;right:-210%}
 }article .entry-header h1{font-size:1em}
 @media screen and (min-width:600px){article .entry-header h1{font-size:1.5em}
-}article .copy{width:90%;position:relative;float:right;background-color:#0e7379;margin:-20% auto 30px 0;z-index:100;color:#fff;padding:20px 20px 20px 30px}
+}article .copy{width:90%;position:relative;float:right;background-color:#0e7379;margin:-20% auto 30px 0;z-index:100;color:#fff;padding:20px 20px 20px 30px;font-family:"Futura",sans-serif;font-weight:200}
 @media screen and (min-width:600px){article .copy{width:78%;margin:-10% auto 30px 0;padding:20px 20px 20px 30px}
 }@media screen and (min-width:1200px){article .copy{margin:-20% auto 30px 0}
 }article .copy h1{text-align:left;font-size:14pt;letter-spacing:.20em;text-transform:uppercase;color:#f9a020}
