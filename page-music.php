@@ -38,7 +38,7 @@ get_header(); ?>
 				
 			));
 			if ($wp_query->have_posts()) :  ?>
-			<section class="schedule-music">
+			<section class="types">
 			<?php while ($wp_query->have_posts()) :  $wp_query->the_post();
 
 				// $theID = get_the_ID();
@@ -61,8 +61,8 @@ get_header(); ?>
 				
 		
 			
-				<div class="col">
-					<a href="<?php echo $url; ?>">
+				<!-- <div class="col">
+					<a href="<?php the_permalink(); ?>">
 						<div class="image">
 							<?php the_post_thumbnail(); ?>
 							<div class="icon">
@@ -70,6 +70,21 @@ get_header(); ?>
 							</div>
 						</div>
 						<h2><?php the_title(); ?></h2>
+					</a>
+				</div> -->
+
+
+				<div class="col">
+					<a href="<?php the_permalink(); ?>">
+						<div class="image">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="card">
+							<div class="wrap">
+								<h2><?php the_title(); ?></h2>
+							</div>
+							<div class="offset"></div>
+						</div>
 					</a>
 				</div>
 

@@ -13,7 +13,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) : the_post(); 
+
+			get_template_part('inc/banner');
+
+			?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
@@ -50,21 +54,35 @@ get_header(); ?>
 			// echo '</pre>';
 
 				?>
-				<section class="schedule">
+				<section class="types">
 				<?php
 					foreach ($terms as $term) { 
-
+						// echo '<pre>';
+						// print_r($term);
+						// echo '</pre>';
 						$url = get_bloginfo('url').'/'.$slug.'/'.$term->slug;
 						?>
 							<div class="col">
 								<a href="<?php echo $url; ?>">
 									<div class="image">
-										<?php the_post_thumbnail(); ?>
-										<div class="icon">
-											<img src="<?php echo get_bloginfo('template_url'); ?>/images/W_button.png">
-										</div>
+
+										<?php 
+										$image = get_field('featured_image', $term);
+										
+										// echo '<pre>';
+										// print_r($image);
+										// echo '</pre>';
+										// include( locate_template( 'inc/banner.php', false, false ) ); 
+										?>
+										<img src="<?php echo $image['sizes']['thumbnail']; ?>">
 									</div>
-									<h2><?php echo $term->name; ?></h2>
+									<div class="card">
+										<div class="wrap">
+											<h2><?php echo $term->name; ?></h2>
+										</div>
+										<div class="offset"></div>
+									</div>
+									
 								</a>
 							</div>
 					<?php }

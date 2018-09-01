@@ -30,28 +30,58 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
-			
-			<?php if(is_home()) { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>">
-		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-		            </a>
-	            </h1>
-	        <?php } else { ?>
-	            <div class="logo">
-	            	<a href="<?php bloginfo('url'); ?>">
-		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-		            </a>
-	            </div>
-	        <?php } ?>
+			<div class="mobile-wrapper">
+				<?php if(is_home()) { ?>
+		            <h1 class="logo">
+			            <a href="<?php bloginfo('url'); ?>">
+			            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+			            </a>
+		            </h1>
+		        <?php } else { ?>
+		            <div class="logo">
+		            	<a href="<?php bloginfo('url'); ?>">
+			            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+			            </a>
+		            </div>
+		        <?php } ?>
 
+		        <div class="event-date">
+		        	<?php the_field('event_date', 'option'); ?>
+		        </div>
+	        </div>
 			
-	</div><!-- wrapper -->
+		</div><!-- wrapper -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<nav role="navigation">
+					  <div id="menuToggle">
+					    <!--
+					    A fake / hidden checkbox is used as click reciever,
+					    so you can use the :checked selector on it.
+					    -->
+					    <input type="checkbox" />
+					    
+					    <!--
+					    Some spans to act as a hamburger.
+					    
+					    They are acting like a real hamburger,
+					    not that McDonalds stuff.
+					    -->
+					    <span></span>
+					    <span></span>
+					    <span></span>
+					    
+					    <!--
+					    Too bad the menu has to be inside of the button
+					    but hey, it's pure CSS magic.
+					    -->
+					    <ul id="menu"></ul>
+					  </div>
+					</nav>
+				</button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content page-wrapper">

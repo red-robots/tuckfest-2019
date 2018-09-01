@@ -35,18 +35,21 @@ get_header(); ?>
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
 					<div class="featured-image">
-						<?php the_post_thumbnail(); ?>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+						<?php the_post_thumbnail('thumbnail'); ?>
 					</div>
+					
 					<div class="copy">
-						<header class="entry-header">
-							<?php the_title( '<h1 class="">', '</h1>' ); ?>
-						</header><!-- .entry-header -->
+						
 
 						<div class="entry-content">
 							<?php
 								the_content();
 							?>
 						</div><!-- .entry-content -->
+						<div class="offset-border"></div>
 					</div>
 					
 

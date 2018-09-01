@@ -23,6 +23,10 @@ jQuery(document).ready(function ($) {
         width: '95%', 
         height: '95%'
     });
+    $('a.colorbox').colorbox({
+        inline:true, 
+        width:"90%"
+    });
 
     	/*
 	*
@@ -35,6 +39,20 @@ jQuery(document).ready(function ($) {
         }
 	});
 
+
+
+/*
+        FAQ dropdowns
+__________________________________________
+*/
+$('.question').click(function() {
+ 
+    $(this).next('.answer').slideToggle(500);
+    $(this).toggleClass('close');
+    $(this).find('.plus-minus-toggle').toggleClass('collapsed');
+    $(this).parent().toggleClass('active');
+ 
+});
 	/*
 	*
 	*	Responsive iFrames
@@ -54,15 +72,101 @@ jQuery(document).ready(function ($) {
 	*	Isotope with Images Loaded
 	*
 	------------------------------------*/
-	var $container = $('#container').imagesLoaded( function() {
-  	$container.isotope({
-    // options
-	 itemSelector: '.item',
-		  masonry: {
-			gutter: 15
-			}
- 		 });
-	});
+	// var $container = $('#container').imagesLoaded( function() {
+ //  	$container.isotope({
+ //    // options
+	//  itemSelector: '.item',
+	// 	  masonry: {
+	// 		gutter: 15
+	// 		}
+ // 		 });
+	// });
+
+    //////////////////// new /////////
+
+// init Isotope
+// var $grid = $('#container').isotope({
+//   itemSelector: '.item'
+// });
+
+// // store filter for each group
+// var filters = {};
+
+// $('.filters').on( 'click', '.button', function( event ) {
+//   var $button = $( event.currentTarget );
+//   // get group key
+//   var $buttonGroup = $button.parents('.button-group');
+//   var filterGroup = $buttonGroup.attr('data-filter-group');
+//   // set filter for group
+//   filters[ filterGroup ] = $button.attr('data-filter');
+//   // combine filters
+//   var filterValue = concatValues( filters );
+//   // set filter for Isotope
+//   $grid.isotope({ filter: filterValue });
+// });
+
+// // change is-checked class on buttons
+// $('.button-group').each( function( i, buttonGroup ) {
+//   var $buttonGroup = $( buttonGroup );
+//   $buttonGroup.on( 'click', 'button', function( event ) {
+//     $buttonGroup.find('.is-checked').removeClass('is-checked');
+//     var $button = $( event.currentTarget );
+//     $button.addClass('is-checked');
+//   });
+// });
+  
+// // flatten object by concatting values
+// function concatValues( obj ) {
+//   var value = '';
+//   for ( var prop in obj ) {
+//     value += obj[ prop ];
+//   }
+//   return value;
+// }
+
+var $container = $('#container'),
+      filters = {};
+
+  $container.isotope({
+    itemSelector : '.item'
+  });
+
+  // filter buttons
+  $('select').change(function(){
+    var $this = $(this);
+    
+    // store filter value in object
+    // i.e. filters.color = 'red'
+    var group = $this.attr('data-filter-group');
+    
+    filters[ group ] = $this.find(':selected').attr('data-filter-value');
+    console.log( $this.find(':selected') );
+    // convert object into array
+    var isoFilters = [];
+    for ( var prop in filters ) {
+      isoFilters.push( filters[ prop ] )
+    }
+    console.log(filters);
+    var selector = isoFilters.join('');
+    $container.isotope({ filter: selector });
+    return false;
+  });
+      
+      // $('ul>li').click(function() {
+      //     var $this = $(this);
+      //     var group = $this.parent().data('filter-group');
+      //     filters[ group ] = $this.data('filter-value'); 
+      //     var isoFilters = [];
+      //       for ( var prop in filters ) {
+      //         isoFilters.push( filters[ prop ] )
+      //       }
+      //       console.log(filters);
+      //       var selector = isoFilters.join('');
+      //       $container.isotope({ filter: selector });
+      //       return false;
+      // });
+
+
 
 	/*
 	*

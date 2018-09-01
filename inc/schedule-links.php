@@ -1,19 +1,10 @@
 <?php 
 $queried_object = get_queried_object();
 $i++; 
-
 if( $i == 1 ) {
-?>
-
-	<div class="image">
-		<?php get_template_part('inc/banner'); ?>
-		<div class="icon">
-			<img src="<?php echo get_bloginfo('template_url'); ?>/images/W_button.png">
-		</div>
-	</div>
-	<h2><?php echo $queried_object->name; ?></h2>
-
-<?php }
+	
+	// echo '<h2>'.$queried_object->name.'</h2>';
+}
 
 
 
@@ -107,17 +98,21 @@ if( $i ==1 ) {
 
 ?>
 	<li>
-		<a href="<?php echo $regLink; ?>">Tuck Fest Registration & Packet Pick-up</a>
+		<div class="title first">
+			<a href="<?php echo $regLink; ?>">Tuck Fest Registration & Packet Pick-up</a>
+		</div>
 		<div class="time">
 			<?php echo $regStart.' - '.$regEnd;  ?>
 		</div>
 	</li>
 <?php } ?>
-<li>
 
-	<a href="<?php echo $url; ?>">
-		<?php the_title(); ?>
-	</a>
+<li>
+	<div class="title">
+		<a href="<?php echo $url; ?>">
+			<?php the_title(); ?>
+		</a>
+	</div>
 	<div class="time">
 		<?php 
 		echo $startTime; 

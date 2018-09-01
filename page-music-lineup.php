@@ -9,9 +9,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
-		<h1><?php the_title(); ?></h1>
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header><!-- .entry-header -->
 			<?php
 
 			if( is_page(2045) ) { // Thursday
@@ -42,10 +44,25 @@ get_header(); ?>
 
 			?>
 
-			<li>
-				<h2 id="<?php echo $hash; ?>"><?php the_title(); ?></h2>
-				<?php the_content(); ?>
-			</li>
+				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
+					<div class="featured-image">
+						<?php the_post_thumbnail('thumbnail'); ?>
+					</div>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+					<div class="copy">
+						
+
+						<div class="entry-content">
+							<?php
+								the_content();
+							?>
+						</div><!-- .entry-content -->
+						<div class="offset-border"></div>
+					</div>
+				</article>
+
 		<?php endwhile; ?>
 	<?php endif; ?>
 

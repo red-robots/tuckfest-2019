@@ -1,5 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: $font-heading;
+	font-weight: 100;
+	letter-spacing: 3px;
 }
 
 .entry-content h1 {
@@ -11,4 +14,6 @@ h1.entry-title {
 	font-size: 20pt;
 	font-family: $font-heading;
 	color: $color-blue;
+	margin: 40px auto 50px auto;
+	float: left;
 }

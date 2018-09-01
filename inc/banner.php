@@ -3,18 +3,25 @@
  * Da Banner
  *
  */ 
-
-$term = get_queried_object();
+// echo $term->term_id;
+// if($term->term_id != '') {
+// 	$term = $term->term_id;
+// } else {
+// 	$term = get_queried_object();
+// }
+// echo $term;
 // echo '<pre>';
 // print_r($term);
 // echo '</pre>';
-$flexslider = get_field( 'flexslider_banner', $term );
+$flexslider = get_field( 'flexslider_banner');
 if( is_page('home') ) {
 	$homeClass = 'home';
 } else {
 	$homeClass = '';
 }
-
+// echo '<pre>';
+// print_r($flexslider);
+// echo '</pre>';
 ?>
 <div id="banner" class="<?php echo $homeClass; ?>">
 	<?php 

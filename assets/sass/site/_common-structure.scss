@@ -1,12 +1,17 @@
 
 body {
 	font-family: $font-copy;
+	background: {
+		image: url(images/bg.jpg);
+		repeat: repeat-y;
+		size: 100%;
+	}
 }
 .clear {clear: both;}
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
-	padding: 20px;
+	// padding: 20px;
 	
 	@media screen and (min-width: $tabwidth) {
 		width: 100%;
@@ -14,6 +19,56 @@ body {
 	@media screen and (min-width: $deskwidth) {
 		width: 90%;
 		padding: 0px;
+	}
+}
+.page-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		padding: 0px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 90%;
+		padding: 0px;
+	}
+}
+.mobile-wrapper {
+	width: 60%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 10px 0 20px 0;
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		padding: 0;
+	}
+}
+.site {
+	width: 100%;
+	margin: 0px auto;
+	// padding: 20px;
+	background-color: #fff;
+	overflow:hidden;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 90%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 80%;
+		padding: 3.5%;
+	}
+}
+#masthead {
+	background: {
+		image: url(images/mobile-bg.png);
+		repeat: no-repeat;
+	}
+	padding-bottom: 20px;
+	@media screen and (min-width: $tabwidth) {
+		background-image: none;
+		padding: 0;
 	}
 }
 #banner {
@@ -33,7 +88,7 @@ body {
 		width: 100%;
 	}
 	@media screen and (min-width: $deskwidth) {
-		width: 940px;
+		// width: 940px;
 		padding: 0px;
 	}
 }
@@ -67,12 +122,12 @@ body {
 
 /* Logo */
 .logo , h1.logo {
-	width: 300px;
+	width: 90%;
 	margin: 10px auto;
 
 	@media screen and (min-width: $tabwidth) {
 		width: 80%;
-		
+		margin: 0px auto 0 auto;
 	
 	}
 	@media screen and (min-width: $deskwidth) {
@@ -93,10 +148,36 @@ body {
 		
 	}
 }
+.event-date {
+	width: 100%;
+	text-align: center;
+	font-family: $font-heading;
+	text-transform: uppercase;
+	font-size: 8px;
+	color: $color-green;
+	letter-spacing: 5px;
+	margin: 0px 0 0px 0;
+	@media screen and (min-width: $tabwidth) {
+		font-size: 20px;
+		letter-spacing: 12px;
+		margin: 20px 0 30px 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		font-size: 30px;
+		margin: 30px 0 40px 0;
+	}
+}
+.page {
+	width: 100%;
+	clear: both;
+}
 article {
 	width: 100%;
 	padding: 20px 0;
-	border-bottom: 2px dashed $color-blue;
+	// border-bottom: 2px dashed $color-blue;
+	position: relative;
+	float: left;
+	margin: 0 0 60px 0;
 	@media screen and (min-width: $tabwidth) {
 
 	}
@@ -104,19 +185,85 @@ article {
 
 	}
 	.featured-image {
-		width: 21.7%;
-		display: inline-block;
-		margin: 1em 3% 0 0;
+		width: 50%;
+		position: relative;
+		z-index: 1;
+		float: left;
+		img {
+			width: 100%;
+		}
+		@media screen and (min-width: $tabwidth) {
+			width: 28.7%;
+		}
+		@media screen and (min-width: $deskwidth) {
+
+		}
+	}
+	.entry-header {
+		width: 100%;
+		position: absolute;
+		top: 8%;
+		right: -110%;
+		color: $color-blue;
+		
+		@media screen and (min-width: $tabwidth) {
+			width: 200%;
+			top: 8%;
+			right: -210%;
+			
+		}
+		@media screen and (min-width: $deskwidth) {
+
+		}
+		h1 {
+			font-size: 1em;
+			@media screen and (min-width: $tabwidth) {
+				font-size: 1.5em;
+			}
+			@media screen and (min-width: $deskwidth) {
+
+			}
+		}
 	}
 	.copy {
-		width: 74%;
-		display: inline-block;
+		width: 90%;
+		position: relative;
+		float: right;
+		background-color: $color-green;
+		margin: -20% auto 30px 0;
+		z-index: 100;
+		color: #fff;
+		padding: 20px 20px 20px 30px;
+		@media screen and (min-width: $tabwidth) {
+			width: 78%;
+			margin: -10% auto 30px 0;
+			padding: 20px 20px 20px 30px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			margin: -20% auto 30px 0;
+		}
+		
 		h1 {
 			text-align: left;
 			font-size: 14pt;
 	    	letter-spacing: 0.20em;
 	    	text-transform: uppercase;
 	    	color: $color-gold;
+		}
+		.offset-border {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			border: 3px solid $color-blue;
+			z-index: 1001;
+			@media screen and (min-width: $tabwidth) {
+				border: 4px solid $color-blue;
+			}
+			@media screen and (min-width: $deskwidth) {
+				border: 5px solid $color-blue;
+			}
 		}
 	}
 

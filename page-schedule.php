@@ -13,27 +13,39 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) : the_post(); 
 
+			get_template_part('inc/banner');
+
+			?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
-
 			<?php endwhile; // End of the loop.?>
+
+			<?php  include( locate_template( 'inc/schedule-links-filter.php', false, false ) );  ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<header class="entry-header">
+			<h1 class="entry-title">Full Schedule</h1>
+		</header><!-- .entry-header -->
+
+	</div><!-- #post-## -->
+
+
 
 <section class="schedule">
 	<div class="col">
-
+	<h2>Thursday</h2>
+	<div class="col-wrap">
+		<div class="offset"></div>
+		<div class="contents">
 	<?php
 	
 	$i=0; 
@@ -58,11 +70,16 @@ get_header(); ?>
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
-	 endwhile; ?>
-<?php endif; ?>
+			 endwhile; ?>
+		<?php endif; ?>
+		</div>
+		</div>
 	</div>
 	<div class="col">
-		
+		<h2>Friday</h2>
+		<div class="col-wrap">
+			<div class="offset"></div>
+			<div class="contents">
 		<?php
 		$i=0; 
 	
@@ -87,11 +104,16 @@ get_header(); ?>
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) );  
 	
-	 endwhile; ?>
-<?php endif; ?>
+			 endwhile; ?>
+		<?php endif; ?>
+		</div>
+		</div>
 	</div>
 	<div class="col">
-		
+		<h2>Saturday</h2>
+		<div class="col-wrap">
+			<div class="offset"></div>
+			<div class="contents">
 		<?php
 		$i=0; 
 	
@@ -116,11 +138,16 @@ get_header(); ?>
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
-	 endwhile; ?>
-<?php endif; ?>
+			 endwhile; ?>
+		<?php endif; ?>
+		</div>
+		</div>
 	</div>
 	<div class="col">
-		
+		<h2>Sunday</h2>
+		<div class="col-wrap">
+			<div class="offset"></div>
+			<div class="contents">
 		<?php
 		$i=0; 
 	
@@ -145,8 +172,10 @@ get_header(); ?>
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
-	 endwhile; ?>
-<?php endif; ?>
+			 endwhile; ?>
+		<?php endif; ?>
+		</div>
+		</div>
 	</div>
 </section>
 	
