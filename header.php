@@ -51,6 +51,19 @@
 	        </div>
 			
 		</div><!-- wrapper -->
+
+		<div class="eyeglass">
+			<a class="colorbox" href="#search">
+				<img src="<?php bloginfo('template_url'); ?>/images/eyeglass.png">
+			</a>
+		</div>
+
+		<div style="display: none;">
+			<div id="search">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 					<nav role="navigation">

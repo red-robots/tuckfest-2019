@@ -17,7 +17,7 @@
 .entry-summary {
 	margin: 1.5em 0 0;
 }
-.entry-content {
+article .entry-content {
 	width: 100%;
 	position: relative;
 	z-index: 10000;
@@ -31,7 +31,11 @@
 		}
 	}
 }
-
+.entry-content {
+	a {
+		color: $color-orange;
+	}
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;

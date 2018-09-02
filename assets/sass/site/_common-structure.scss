@@ -61,6 +61,8 @@ body {
 	}
 }
 #masthead {
+	width: 100%;
+	position: relative;
 	background: {
 		image: url(images/mobile-bg.png);
 		repeat: no-repeat;
@@ -269,6 +271,29 @@ article {
 		}
 	}
 
+}
+.eyeglass {
+	width: 33px;
+	height: 30px;
+	position: absolute;
+	top: 18px;
+	right: 8%;;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+.search-submit {
+	display: none;
+}
+input.search-field {
+	width: 100%;
+	padding: 20px 0;
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
 }
 footer.site-footer {
 	width: 100%;

@@ -252,7 +252,8 @@ $instructor = get_field('instructor');
 $instructorInfo = get_field('instructor_information');
 // $santiTitle = sanitize_title_with_dashes(get_the_title());
 
-
+// Map (in options)
+$mapLink = get_field('map_link', 'option');
 
 if( $postType == 'music' ) {
 	if( $term == 'thursday') {
@@ -345,7 +346,7 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 				<?php } ?>
 				<?php if($location) { ?>
 					<div class="info-item">
-						LOCATION: <?php echo $location[0]; ?>
+						LOCATION: <?php echo $location[0]; ?> <a href="<?php echo $mapLink; ?>">[MAP]</a>
 					</div>
 				<?php } ?>
 				<?php if($type) { ?>
