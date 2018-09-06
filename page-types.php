@@ -68,7 +68,7 @@ get_header(); ?>
 
 										<?php 
 										$image = get_field('featured_image', $term);
-										$imageMobile = get_field('featured_image', $term);
+										$imageMobile = get_field('featured_image_mobile', $term);
 										
 										// echo '<pre>';
 										// print_r($image);
