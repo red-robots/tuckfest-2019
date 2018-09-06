@@ -68,13 +68,16 @@ get_header(); ?>
 
 										<?php 
 										$image = get_field('featured_image', $term);
+										$imageMobile = get_field('featured_image', $term);
 										
 										// echo '<pre>';
 										// print_r($image);
 										// echo '</pre>';
 										// include( locate_template( 'inc/banner.php', false, false ) ); 
 										?>
-										<img src="<?php echo $image['sizes']['tile']; ?>">
+										<div class="mobile"><img src="<?php echo $imageMobile['sizes']['tile']; ?>"></div>
+										<div class="desktop"<img src="<?php echo $image['sizes']['tile']; ?>"></div>
+										
 									</div>
 									<div class="card">
 										<div class="wrap">
