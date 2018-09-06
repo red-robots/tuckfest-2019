@@ -76,7 +76,7 @@ get_header(); ?>
 										// include( locate_template( 'inc/banner.php', false, false ) ); 
 										?>
 										<div class="mobile"><img src="<?php echo $imageMobile['sizes']['tile']; ?>"></div>
-										<div class="desktop"<img src="<?php echo $image['sizes']['tile']; ?>"></div>
+										<div class="desktop"><img src="<?php echo $image['sizes']['tile']; ?>"></div>
 										
 									</div>
 									<div class="card">
