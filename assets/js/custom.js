@@ -151,6 +151,12 @@ var $container = $('#container'),
     $container.isotope({ filter: selector });
     return false;
   });
+
+  // show filtered results 
+  $('select.option-set').on('change', function() {
+    $('#outer-container').removeClass('closed');
+    $('#outer-container').addClass('open');
+  })
       
       // $('ul>li').click(function() {
       //     var $this = $(this);

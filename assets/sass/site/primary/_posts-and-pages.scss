@@ -43,7 +43,10 @@ article .entry-content {
 section.schedule {
 	flex-wrap: wrap;
 	.col {
-		flex-basis: 22%;
+		flex-basis: 100%;
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: 22%;
+		}
 		h2 {
 			width: 100%;
 			text-align: center;
@@ -198,6 +201,15 @@ section.schedule-music {
 	text-transform: uppercase;
 	border: none;
 	cursor: pointer;
+}
+#outer-container {
+	overflow: hidden;
+	&.closed {
+		max-height: 0;
+	}
+	&.open {
+		max-height: 11000;
+	}
 }
 #container {
 	overflow: hidden;
@@ -357,6 +369,10 @@ section.types {
 		color: $color-gold;
 		text-decoration: none;
 	}
+}
+section.faqs {
+	width: 100%;
+	clear: both;
 }
 .faqrow {
 	width: auto;

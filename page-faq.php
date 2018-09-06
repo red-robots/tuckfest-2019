@@ -21,6 +21,7 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 					<div class="entry-content">
 						<?php //the_content(); ?>
+						<section class="faqs">
 						<?php /*
 						     ------------------------------------
 						        FAQ's
@@ -38,7 +39,7 @@ get_header(); ?>
 						<?php endwhile; endif; // end faq's ?>
 					</div>
 			<?php endwhile; // End of the loop.
-			?>
+			?></section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

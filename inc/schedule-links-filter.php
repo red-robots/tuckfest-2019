@@ -130,7 +130,7 @@ endif;
 
 */ ?>
 
-
+<div id="outer-container" class="closed">
 <div id="container">
 	
 
@@ -370,4 +370,5 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 	</div>
 
 <?php endwhile; endif; ?>
+</div>
 </div>

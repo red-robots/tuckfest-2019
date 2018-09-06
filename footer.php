@@ -58,7 +58,13 @@
 			<?php endif; ?>
 		</div>  
 		<div class="row description">
-			<p>U.S. National Whitewater Center | 5000 Whitewater Center Parkway | Charlotte, NC 28214 | 704.391.3900 | info@usnwc.org</p>
+			<!-- <p>U.S. National Whitewater Center | 5000 Whitewater Center Parkway | Charlotte, NC 28214 | 704.391.3900 | info@usnwc.org</p> -->
+		</div>
+		<div class="presented">
+			<div class="thing">Presented By</div>
+			<div class="image">
+				<img src="<?php bloginfo('template_url'); ?>/images/presented.png">
+			</div>
 		</div>
 	</footer>
 </div><!-- #page -->
