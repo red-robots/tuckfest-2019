@@ -7,14 +7,25 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header();
+
+$comingSoon = get_field('coming_soon', 'option');
+
+ ?>
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
+		<?php while(have_posts()) : the_post(); 
+
+			get_template_part('inc/banner');
+
+		?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 			<?php
+
+			endwhile;
 
 			if( is_page(2045) ) { // Thursday
 				$tax = 'thursday';
@@ -46,7 +57,13 @@ get_header(); ?>
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
 					<div class="featured-image">
-						<?php the_post_thumbnail('tile'); ?>
+						<?php 
+						if(has_post_thumbnail()) {
+							the_post_thumbnail('tile');
+						} else { ?>
+							<img src="<?php echo $comingSoon['url']; ?>">
+						<?php } ?>
+						
 					</div>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="">', '</h1>' ); ?>

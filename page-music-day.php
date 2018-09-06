@@ -7,12 +7,19 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+
+$comingSoon = get_field('coming_soon', 'option');
+
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php
+			get_template_part('inc/banner');
+
+			
 			$wp_query = new WP_Query();
 			$wp_query->query(array(
 				'post_type'=> array('music'),
