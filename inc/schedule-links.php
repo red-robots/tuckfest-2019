@@ -32,19 +32,19 @@ if( $queried_object->slug == 'thursday' ) {
 	$EndTime = $friEndTime;
 	$regStart = get_field('friday_start', 'option');
 	$regEnd = get_field('friday_end', 'option');
-	$regLink = get_field('friday_start', 'option');
+	$regLink = get_field('friday_time_link', 'option');
 }elseif( $queried_object->slug == 'saturday' ) {
 	$startTime = $satTime;
 	$EndTime = $satEndTime;
 	$regStart = get_field('saturday_start', 'option');
 	$regEnd = get_field('saturday_end', 'option');
-	$regLink = get_field('saturday_start', 'option');
+	$regLink = get_field('saturday_time_link', 'option');
 }elseif( $queried_object->slug == 'sunday' ) {
 	$startTime = $sunTime;
 	$EndTime = $sunEndTime;
 	$regStart = get_field('sunday_start', 'option');
 	$regEnd = get_field('sunday_end', 'option');
-	$regLink = get_field('sunday_start', 'option');
+	$regLink = get_field('sunday_time_link', 'option');
 }
 
 $theID = get_the_ID();
@@ -108,6 +108,12 @@ if( $i ==1 ) {
 <?php } ?>
 
 <li>
+<?php if( get_post_type() == 'music' ) { ?>
+	<div class="musicnote">
+		<img src="<?php bloginfo('template_url'); ?>/images/MusicNote.png">
+	</div>
+	
+<?php } ?>
 	<div class="title">
 		<a href="<?php echo $url; ?>">
 			<?php the_title(); ?>

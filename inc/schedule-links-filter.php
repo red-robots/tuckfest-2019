@@ -162,12 +162,18 @@ if ($wp_query->have_posts()) :  ?>
 <?php while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
 $queried_object = get_queried_object();
+$theID = get_the_ID();
 $i++; 
 if( $i == 1 ) {
 	
 	// echo '<h2>'.$queried_object->name.'</h2>';
 }
-
+// terms
+$terms = get_the_terms($theID, 'event_day');
+foreach ( $terms as $term ) {
+	$day = $term->slug;
+	// echo $day;
+}
 
 $instructor = '';// need to fill this out.
 $thurTime = get_field('thursday_time_p');
@@ -181,27 +187,27 @@ $sunEndTime = get_field('sunday_time_p_end');
 
 
 // echo '<pre>';
-// print_r($queried_object);
+// print_r($term);
 // echo '</pre>';
-if( $queried_object->slug == 'thursday' ) {
+if( $day == 'thursday' ) {
 	$startTime = $thurTime;
 	$EndTime = $thurEndTime;
 	$regStart = get_field('thursday_start', 'option');
 	$regEnd = get_field('thursday_end', 'option');
 	$regLink = get_field('thursday_time_link', 'option');
-}elseif( $queried_object->slug == 'friday' ) {
+}elseif( $day == 'friday' ) {
 	$startTime = $friTime;
 	$EndTime = $friEndTime;
 	$regStart = get_field('friday_start', 'option');
 	$regEnd = get_field('friday_end', 'option');
 	$regLink = get_field('friday_start', 'option');
-}elseif( $queried_object->slug == 'saturday' ) {
+}elseif( $day == 'saturday' ) {
 	$startTime = $satTime;
 	$EndTime = $satEndTime;
 	$regStart = get_field('saturday_start', 'option');
 	$regEnd = get_field('saturday_end', 'option');
 	$regLink = get_field('saturday_start', 'option');
-}elseif( $queried_object->slug == 'sunday' ) {
+}elseif( $day == 'sunday' ) {
 	$startTime = $sunTime;
 	$EndTime = $sunEndTime;
 	$regStart = get_field('sunday_start', 'option');
@@ -351,7 +357,7 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 				<?php } ?>
 				<?php if($type) { ?>
 					<div class="info-item">
-						TYPE: <?php echo $type; ?>
+						<?php echo $type; ?>
 					</div>
 				<?php } ?>
 				<?php if($instructor) { ?>

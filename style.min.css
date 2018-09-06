@@ -1679,7 +1679,7 @@ a:hover,a:active{outline:0}
 @media screen and (min-width:600px){.main-navigation .menu{max-height:1000px}
 }.main-navigation ul{list-style:none;margin:0;padding:0;background-color:#0e7379}
 @media screen and (min-width:600px){.main-navigation ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background-color:rgba(14,115,121,0);padding:0}
-}.main-navigation ul ul{float:left;position:absolute;top:2em;left:0;display:none;z-index:99999;max-height:0;width:250px;background:rgba(232,229,218,0.7);overflow:hidden;-webkit-transition:all ease .8s;transition:all ease .8s}
+}.main-navigation ul ul{float:left;position:absolute;top:2em;left:0;display:none;z-index:99999;max-height:0;width:250px;background:#e8e5da;overflow:hidden;-webkit-transition:all ease .8s;transition:all ease .8s}
 @media screen and (min-width:600px){.main-navigation ul ul{display:block}
 }.main-navigation ul ul ul{top:0}
 @media screen and (min-width:600px){.main-navigation ul ul ul{display:block}
@@ -1903,6 +1903,9 @@ section.schedule{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 section.schedule .col{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%}
 @media screen and (min-width:600px){section.schedule .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%}
 }section.schedule .col h2{width:100%;text-align:center;color:#0e7379}
+section.schedule .col .musicnote{width:25px;display:inline-block}
+section.schedule .col .musicnote img{width:100%}
+section.schedule .col .title{width:auto;display:inline-block;padding:0 0 5px 0}
 section.schedule-music{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 section.schedule-music .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;flex-basis:22%}
 section.schedule,section.schedule-music{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}

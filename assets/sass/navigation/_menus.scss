@@ -53,7 +53,7 @@
 			z-index: 99999;
 			max-height: 0px;
 			width: 250px;
-			background: rgba($color-tan,.7);
+			background: rgba($color-tan,1);
 			overflow: hidden;
 			@include transition(all ease .8s);
 			@media screen and (min-width: $tabwidth) {
