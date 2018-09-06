@@ -300,9 +300,24 @@ section.types {
 			position: relative;
 			padding: 3px;
 			float: left;
-			img {
+			.mobile, .desktop {
 				width: 100%;
+				img {
+					width: 100%;
+				}
 			}
+			.mobile {
+				@media screen and (min-width: $tabwidth) {
+					display: none;
+				}
+			}
+			.desktop {
+				display: none;
+				@media screen and (min-width: $tabwidth) {
+					display: block;
+				}
+			}
+			
 		}
 		.card {
 			width: 75%;
