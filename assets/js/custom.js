@@ -57,6 +57,18 @@ $('.question').click(function() {
     $(this).parent().toggleClass('active');
  
 });
+
+$('.burger, .overlay').click(function(){
+  $('.burger').toggleClass('clicked');
+  $('.overlay').toggleClass('show');
+  $('nav').toggleClass('show');
+  $('body').toggleClass('overflow');
+});
+$('nav.mobilemenu li').click(function() {
+    $(this).find('ul.dropdown').toggleClass('active');
+});
+
+
 	/*
 	*
 	*	Responsive iFrames

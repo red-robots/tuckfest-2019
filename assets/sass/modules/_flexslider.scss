@@ -92,7 +92,8 @@ html[xmlns] .flexslider .slides {
 .flexslider .slides .iframe-wrapper img,
 .flexslider .slides .image-wrapper img {
     height: auto;
-    min-height: 300px;
+    
+    min-height: 300px
 }
 .flexslider .slides .iframe-wrapper img.lazy,
 .flexslider .slides .image-wrapper img.lazy {
@@ -113,7 +114,9 @@ html[xmlns] .flexslider .slides {
 }
 .flexslider .slides .iframe-wrapper iframe, .flexslider .slides .iframe-wrapper video {
     display: block;
-    min-height: 300px;
+    @media screen and (min-width: $tabwidth) {
+        min-height: 300px;
+    }
 }
 .flexslider .slides .iframe-wrapper.yes-mobile {
     padding: 0;

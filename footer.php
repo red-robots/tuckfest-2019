@@ -63,7 +63,8 @@
 		<div class="presented">
 			<div class="thing">Presented By</div>
 			<div class="image">
-				<img src="<?php bloginfo('template_url'); ?>/images/presented.png">
+			<a href="https://usnwc.org" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/presented.png"></a>
+				
 			</div>
 		</div>
 	</footer>
