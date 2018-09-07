@@ -209,9 +209,9 @@ article {
 		color: $color-blue;
 		
 		@media screen and (min-width: $tabwidth) {
-			width: 200%;
-			top: 8%;
-			right: -210%;
+			width: 250%;
+			top: 30%;
+			right: -260%;
 			
 		}
 		@media screen and (min-width: $deskwidth) {
@@ -232,7 +232,7 @@ article {
 		position: relative;
 		float: right;
 		background-color: $color-green;
-		margin: -20% auto 30px 0;
+		margin: -10% auto 30px 0;
 		z-index: 100;
 		color: #fff;
 		padding: 20px 20px 20px 30px;
@@ -244,7 +244,7 @@ article {
 			padding: 20px 20px 20px 30px;
 		}
 		@media screen and (min-width: $deskwidth) {
-			margin: -20% auto 30px 0;
+			margin: -10% auto 30px 0;
 		}
 		
 		h1 {
