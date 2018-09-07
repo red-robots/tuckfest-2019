@@ -39,6 +39,10 @@ jQuery(document).ready(function ($) {
         }
 	});
 
+    $('li.menu-item-has-children').click( function() {
+        $(this).find('ul.sub-menu').css('maxHeight:1000');
+    });
+
 
 
 /*

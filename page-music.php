@@ -65,20 +65,10 @@ get_header(); ?>
 				
 		
 			
+				
+
+
 				<!-- <div class="col">
-					<a href="<?php the_permalink(); ?>">
-						<div class="image">
-							<?php the_post_thumbnail(); ?>
-							<div class="icon">
-								<img src="<?php echo get_bloginfo('template_url'); ?>/images/W_button.png">
-							</div>
-						</div>
-						<h2><?php the_title(); ?></h2>
-					</a>
-				</div> -->
-
-
-				<div class="col">
 					<a href="<?php the_permalink(); ?>">
 						<div class="image">
 							<?php the_post_thumbnail('tile'); ?>
@@ -90,7 +80,7 @@ get_header(); ?>
 							<div class="offset"></div>
 						</div>
 					</a>
-				</div>
+				</div> -->
 
 				<?php //} ?>
 
