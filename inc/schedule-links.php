@@ -19,7 +19,7 @@ $sunEndTime = get_field('sunday_time_p_end');
 
 
 // echo '<pre>';
-// print_r($queried_object);
+// print_r($thurTime);
 // echo '</pre>';
 if( $queried_object->slug == 'thursday' ) {
 	$startTime = $thurTime;

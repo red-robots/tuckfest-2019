@@ -324,3 +324,39 @@ class WP_Image_Size_Limit {
 }
 $WP_Image_Size_Limit = new WP_Image_Size_Limit;
 add_action('admin_head', array($WP_Image_Size_Limit, 'load_styles'));
+
+// function university_adjust_queries($query){
+//    if ( ! is_admin() && is_post_type_archive( 'competition' )  ) {
+//         // $query->set( 'meta_key', 'event_date' );
+//         $query->set( 'orderby', 'menu_order' );
+//         $query->set( 'order', 'DESC');
+
+//         // $query->set( 'meta_query', array(
+//         //     array(
+//         //         'meta_key'=> 'thursday_time_p',
+//         //         'meta_type'         => 'TIME',
+//         //     )
+//         // ) );
+//    }
+// }
+// add_action( 'pre_get_posts', 'university_adjust_queries' );
+
+//add_action('parse_query', 'pmg_ex_sort_posts');
+
+// function pmg_ex_sort_posts($q)
+// {
+//     if(!$q->is_main_query() || is_admin())
+//         return;
+    
+//     if(
+//         !is_post_type_archive(array('music','yoga','demo_clinic', 'competition')) 
+//     ) return;
+//     $q->set('orderby', 'meta_value');
+//     $q->set('order', 'DESC');
+//     $q->set( 'meta_query', array(
+//             array(
+//                 'meta_key'=> 'thursday_time_p',
+//                 'meta_type'         => 'TIME',
+//             )
+//         ) );
+// }

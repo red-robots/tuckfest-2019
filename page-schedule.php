@@ -26,14 +26,14 @@ get_header(); ?>
 				</div><!-- #post-## -->
 			<?php endwhile; // End of the loop.?>
 
-			<?php  include( locate_template( 'inc/schedule-links-filter.php', false, false ) );  ?>
+			<?php  //include( locate_template( 'inc/schedule-links-filter.php', false, false ) );  ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<h1 class="entry-title">Full Schedule</h1>
+			<!-- <h1 class="entry-title">Full Schedule</h1> -->
 		</header><!-- .entry-header -->
 
 	</div><!-- #post-## -->
@@ -49,14 +49,16 @@ get_header(); ?>
 	<?php
 	
 	$i=0; 
-
+// wp_reset_query();
+// wp_reset_postdata();
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
+		'post_type'=> array('music','yoga','demo_clinic', 'competition'),
 		'posts_per_page' => -1,
 		'meta_key'			=> 'thursday_time_p',
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC',
+		'meta_type'         => 'TIME',
 		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
@@ -66,7 +68,13 @@ get_header(); ?>
 			)
 		)
 	));
+	//echo $wp_query->request;
 	if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
+
+	//$results = new WP_Query( $query_args );
+// Oops, $results has nothing, or something we did not expect
+// Show the query
+
 
 		include( locate_template( 'inc/schedule-links.php', false, false ) ); 
 	
@@ -91,6 +99,7 @@ get_header(); ?>
 		'meta_key'			=> 'friday_time_p',
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC',
+		'meta_type'         => 'TIME',
 		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
@@ -125,6 +134,7 @@ get_header(); ?>
 		'meta_key'			=> 'saturday_time_p',
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC',
+		'meta_type'         => 'TIME',
 		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
@@ -159,6 +169,7 @@ get_header(); ?>
 		'meta_key'			=> 'sunday_time_p',
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC',
+		'meta_type'         => 'TIME',
 		'post_status' => array( 'publish', 'private' ),
 		'tax_query' => array(
 			array(
