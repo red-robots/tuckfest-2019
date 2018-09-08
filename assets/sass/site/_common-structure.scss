@@ -66,6 +66,7 @@ body {
 	background: {
 		image: url(images/mobile-bg.png);
 		repeat: no-repeat;
+		size: cover;
 	}
 	padding-bottom: 20px;
 	@media screen and (min-width: $tabwidth) {

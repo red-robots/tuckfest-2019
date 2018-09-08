@@ -114,6 +114,7 @@ html[xmlns] .flexslider .slides {
 .flexslider .slides .iframe-wrapper iframe, .flexslider .slides .iframe-wrapper video {
     display: block;
     min-height: 300px;
+    max-width: 100%;
 }
 .flexslider .slides .iframe-wrapper.yes-mobile {
     padding: 0;
