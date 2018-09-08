@@ -69,7 +69,9 @@
 
 	<nav class="mobilemenu">
 	  <ul class="main">
-	    <li>Schedule</li>
+	    <li>
+	    	<a href="<?php bloginfo('url'); ?>/schedule">Schedule</a>
+	    </li>
     	<li>Music
 	    	<ul class="dropdown">
 	    		<li>
@@ -121,9 +123,12 @@
 	    		
 	    	</ul>
     	</li>
-    	<li>Demos</li>
-    	<li>Clinics</li>
-    	<li>Yoga</li>
+    	<li>
+    		<a href="<?php bloginfo('url'); ?>/demo-clinic-type/demo">Demos & Clinics</a>
+	    </li>
+    	<li>
+    		<a href="<?php bloginfo('url'); ?>/tuckfest-yoga">Yoga</a>
+    	</li>
     	<li>Buy
 	    	<ul class="dropdown">
 	    		<li>
