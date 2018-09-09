@@ -115,7 +115,13 @@ if( $i ==1 ) {
 	
 <?php } ?>
 	<div class="title">
-		<a href="<?php echo $url; ?>">
+		<?php 
+		// Temporary link for music
+		if(get_post_type() == 'music') { ?>
+			<a href="<?php bloginfo('url'); ?>/tuckfest-music">
+		 <?php } else { ?>
+			<a href="<?php echo $url; ?>">
+		<?php } ?>
 			<?php the_title(); ?>
 		</a>
 	</div>

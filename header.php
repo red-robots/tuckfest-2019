@@ -131,9 +131,9 @@
     	</li>
     	<li>Buy
 	    	<ul class="dropdown">
-	    		<li>
+	    		<!-- <li>
 	    			<a href="<?php bloginfo('url'); ?>/buy/info/">Info</a>
-	    		</li>
+	    		</li> -->
 	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/buy/registration/">Registration</a>
 	    		</li>

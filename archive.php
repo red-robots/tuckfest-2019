@@ -9,7 +9,7 @@
 
 get_header(); 
 
-$comingSoon = get_field('coming_soon', 'option');
+$comingSoonImage = get_field('coming_soon', 'option');
 
 ?>
 <div class="content-wrapper">
@@ -26,19 +26,14 @@ $comingSoon = get_field('coming_soon', 'option');
 		$banner = get_field('featured_image', $obj);
 		if($banner) { ?>
 			<img src="<?php echo $banner['url']; ?>">
-		<?php }
-
-						 ?>
+		<?php } ?>
 		</div>
 
 			<header class="page-header">
-			<h1 class="entry-title">
-				<?php single_term_title(); ?>
-			</h1>
-				<?php
-					
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
+				<h1 class="entry-title">
+					<?php single_term_title(); ?>
+				</h1>
+				<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 			</header><!-- .page-header -->
 
 			<?php
@@ -46,7 +41,14 @@ $comingSoon = get_field('coming_soon', 'option');
 			while ( have_posts() ) : the_post(); 
 
 				$hash = sanitize_title_with_dashes(get_the_title());
+				$eventComingSoon=get_field('coming_soon');
+				$eventComingSoon=$eventComingSoon[0];
 
+				// echo '<pre>';
+				// print_r($eventComingSoon);
+				// echo '</pre>';
+
+				if( $eventComingSoon != 'soon' ) :
 			?>
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
@@ -58,26 +60,20 @@ $comingSoon = get_field('coming_soon', 'option');
 						if(has_post_thumbnail()) {
 							the_post_thumbnail('tile');
 						} else { ?>
-							<img src="<?php echo $comingSoon['url']; ?>">
+							<img src="<?php echo $comingSoonImage['url']; ?>">
 						<?php } ?>
 					</div>
-					
 					<div class="copy">
-						
-
 						<div class="entry-content">
-							<?php
-								the_content();
-							?>
+							<?php the_content(); ?>
 						</div><!-- .entry-content -->
 						<div class="offset-border"></div>
 					</div>
-					
-
-					
 				</article><!-- #post-## -->
 
-			<?php endwhile; ?>
+			<?php 
+			endif; // coming soon
+			endwhile; ?>
 
 		<?php endif; ?>
 
