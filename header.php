@@ -72,8 +72,8 @@
 	    <li>
 	    	<a href="<?php bloginfo('url'); ?>/schedule">Schedule</a>
 	    </li>
-    	<li>Music
-	    	<ul class="dropdown">
+    	<li><a href="<?php bloginfo('url'); ?>/tuckfest-music">Music</a>
+	    	<!-- <ul class="dropdown">
 	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/tuckfest-music/thursday-line-up/">Thursday Line-up</a>
 	    		</li>
@@ -89,7 +89,7 @@
 	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/tuckfest-music/past-line-ups/">Past Line-up</a>
 	    		</li>
-	    	</ul>
+	    	</ul> -->
     	</li>
     	<li>Competitions
 	    	<ul class="dropdown">
