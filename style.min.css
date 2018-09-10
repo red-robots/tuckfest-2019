@@ -1747,9 +1747,9 @@ nav.mobilemenu.show ul.main li ul.dropdown.active{max-height:1000px}
 nav.mobilemenu.show .about,nav.mobilemenu.show .social,nav.mobilemenu.show ul.sub{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);opacity:1;-webkit-transition-delay:.85s;transition-delay:.85s}
 @media(min-width:667px){nav.mobilemenu{padding:120px 90px 70px 90px}
 }nav.mobilemenu ul.main{list-style-type:none;margin:0}
-nav.mobilemenu ul.main li{margin-bottom:20px;-webkit-transform:translateX(40px);-ms-transform:translateX(40px);transform:translateX(40px);opacity:0;-webkit-transition:all .3s ease;transition:all .3s ease}
+nav.mobilemenu ul.main li{margin-bottom:20px;-webkit-transform:translateX(40px);-ms-transform:translateX(40px);transform:translateX(40px);opacity:0;font-weight:300;text-transform:uppercase;letter-spacing:5px;padding:10px 0;-webkit-transition:all .3s ease;transition:all .3s ease}
 nav.mobilemenu ul.main li:last-of-type{margin-bottom:0}
-nav.mobilemenu ul.main li a{color:#fff;font-family:"Raleway",sans-serif;text-decoration:none;text-transform:uppercase;display:block;letter-spacing:5px;font-weight:600;padding:10px 0;-webkit-transition:all .3s ease;transition:all .3s ease}
+nav.mobilemenu ul.main li a{color:#fff;text-decoration:none;display:block;-webkit-transition:all .3s ease;transition:all .3s ease}
 nav.mobilemenu ul.main li a span{color:#b7ac7f}
 nav.mobilemenu ul.main li a:hover{color:#b7ac7f}
 nav.mobilemenu ul.main ul.dropdown{-webkit-transition:all .5s ease;transition:all .5s ease}
@@ -1968,13 +1968,12 @@ section.schedule-music .col{-webkit-flex-basis:22%;-ms-flex-preferred-size:22%;f
 section.schedule,section.schedule-music{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}
 section.schedule .col-wrap,section.schedule-music .col-wrap{width:100%;padding:20px 10px 30px 10px;margin:0 0 30px 0;background-color:#003d4d;color:#f9a020;text-align:center;font-size:11pt;position:relative;float:left}
 section.schedule .col-wrap .offset,section.schedule-music .col-wrap .offset{border:2px solid #0e7379;width:100%;height:100%;position:absolute;top:8px;left:8px}
-section.schedule .col-wrap .contents,section.schedule-music .col-wrap .contents{width:100%;height:100%;float:left;position:relative;z-index:100000}
+section.schedule .col-wrap .contents,section.schedule-music .col-wrap .contents{width:100%;height:100%;float:left;position:relative;z-index:1000}
 section.schedule .col-wrap .image,section.schedule-music .col-wrap .image{width:100%;position:relative;padding:3px;float:left}
 section.schedule .col-wrap .image img,section.schedule-music .col-wrap .image img{width:100%}
 section.schedule .col-wrap .icon,section.schedule-music .col-wrap .icon{width:50px;height:50px;position:absolute;bottom:-25px;left:0;right:0;margin:0 auto;z-index:100000}
 section.schedule .col-wrap h2,section.schedule-music .col-wrap h2{text-transform:uppercase;font-family:"GoBold",sans-serif;margin:30px auto 0 auto;width:100%;float:left}
 section.schedule .col-wrap .time,section.schedule-music .col-wrap .time{color:#f9a020}
-section.schedule .col-wrap .first,section.schedule-music .col-wrap .first{margin:0 0 20px 0}
 section.schedule .col-wrap .title,section.schedule-music .col-wrap .title{text-transform:uppercase}
 section.schedule .col-wrap .title a,section.schedule-music .col-wrap .title a{text-decoration:none;color:#fff;border-bottom:1px solid #003d4d;-webkit-transition:all ease .2s;transition:all ease .2s}
 section.schedule .col-wrap .title a:hover,section.schedule-music .col-wrap .title a:hover{border-bottom:1px solid #fff}

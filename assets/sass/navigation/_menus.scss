@@ -613,6 +613,10 @@ nav.mobilemenu {
       margin-bottom: 20px;
       @include transform(translateX(40px));
       opacity: 0;
+     font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      padding: 10px 0;
       @include transition(all .3s ease);
       
       &:last-of-type {
@@ -621,14 +625,11 @@ nav.mobilemenu {
       
       a {
         color: $white;
-        font-family: $raleway;
-        text-decoration: none;
-        text-transform: uppercase;
-        
+        // font-family: $raleway;
+         text-decoration: none;
         display: block;
-        letter-spacing: 5px;
-        font-weight: 600;
-        padding: 10px 0;
+        
+        
         @include transition(all .3s ease);
         
         span {
