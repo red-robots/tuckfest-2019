@@ -32,15 +32,28 @@
 		<div class="wrapper">
 			<div class="mobile-wrapper">
 				<?php if(is_home()) { ?>
-		            <h1 class="logo">
+		            <h1 class="logo desktop">
 			            <a href="<?php bloginfo('url'); ?>">
 			            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
 			            </a>
 		            </h1>
 		        <?php } else { ?>
-		            <div class="logo">
+		            <div class="logo desktop">
 		            	<a href="<?php bloginfo('url'); ?>">
 			            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+			            </a>
+		            </div>
+		        <?php } ?>
+		        <?php if(is_home()) { ?>
+		            <h1 class="logo mobile">
+			            <a href="<?php bloginfo('url'); ?>">
+			            	<img src="<?php bloginfo('template_url'); ?>/images/logo-mobile.png" alt="<?php bloginfo('name'); ?>">
+			            </a>
+		            </h1>
+		        <?php } else { ?>
+		            <div class="logo mobile">
+		            	<a href="<?php bloginfo('url'); ?>">
+			            	<img src="<?php bloginfo('template_url'); ?>/images/logo-mobile.png" alt="<?php bloginfo('name'); ?>">
 			            </a>
 		            </div>
 		        <?php } ?>

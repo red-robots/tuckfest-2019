@@ -61,7 +61,7 @@
 			<!-- <p>U.S. National Whitewater Center | 5000 Whitewater Center Parkway | Charlotte, NC 28214 | 704.391.3900 | info@usnwc.org</p> -->
 		</div>
 		<div class="presented">
-			<div class="thing">Presented By</div>
+			<!-- <div class="thing">Presented By</div> -->
 			<div class="image">
 			<a href="https://usnwc.org" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/presented.png"></a>
 				

@@ -511,7 +511,7 @@ body {
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: 15px;
   border-radius: 4px;
   z-index: 10001;
@@ -637,7 +637,7 @@ nav.mobilemenu {
         }
         
         &:hover {
-          color: $gold;
+          // color: $gold;
         }
       }
     }

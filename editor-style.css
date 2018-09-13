@@ -1,3 +1,15 @@
-.custom-color {
-  color: #444;
+.reg-btn {
+	background-color:  #0e7379;
+	color: #fff;
+	width: auto;
+	display: inline-block;
+	
+
+}
+.reg-btn a {
+	background-color:  #0e7379;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 10px 25px;
 }

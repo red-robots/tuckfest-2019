@@ -27,23 +27,31 @@ if( $queried_object->slug == 'thursday' ) {
 	$regStart = get_field('thursday_start', 'option');
 	$regEnd = get_field('thursday_end', 'option');
 	$regLink = get_field('thursday_time_link', 'option');
+	$regStartTwo = get_field('thursday_start_2', 'option');
+	$regEndTwo = get_field('thursday_end_2', 'option');
 }elseif( $queried_object->slug == 'friday' ) {
 	$startTime = $friTime;
 	$EndTime = $friEndTime;
 	$regStart = get_field('friday_start', 'option');
 	$regEnd = get_field('friday_end', 'option');
 	$regLink = get_field('friday_time_link', 'option');
+	$regStartTwo = get_field('friday_start_2', 'option');
+	$regEndTwo = get_field('friday_end_2', 'option');
 }elseif( $queried_object->slug == 'saturday' ) {
 	$startTime = $satTime;
 	$EndTime = $satEndTime;
 	$regStart = get_field('saturday_start', 'option');
 	$regEnd = get_field('saturday_end', 'option');
+	$regStartTwo = get_field('saturday_start_2', 'option');
+	$regEndTwo = get_field('saturday_end_2', 'option');
 	$regLink = get_field('saturday_time_link', 'option');
 }elseif( $queried_object->slug == 'sunday' ) {
 	$startTime = $sunTime;
 	$EndTime = $sunEndTime;
 	$regStart = get_field('sunday_start', 'option');
 	$regEnd = get_field('sunday_end', 'option');
+	$regStartTwo = get_field('sunday_start_2', 'option');
+	$regEndTwo = get_field('sunday_end_2', 'option');
 	$regLink = get_field('sunday_time_link', 'option');
 }
 
@@ -102,7 +110,15 @@ if( $i ==1 ) {
 			<a href="<?php echo $regLink; ?>">Tuck Fest Registration & Packet Pick-up</a>
 		</div>
 		<div class="time">
-			<?php echo $regStart.' - '.$regEnd;  ?>
+			<?php 
+			if( $regStart && $regEnd ) {
+				echo $regStart.' - '.$regEnd;  
+			}
+			if( $regStartTwo && $regEndTwo ) {
+				echo '<br>' . $regStartTwo.' - '.$regEndTwo;  
+			}
+
+			?>
 		</div>
 	</li>
 <?php } ?>

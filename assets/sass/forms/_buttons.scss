@@ -24,3 +24,27 @@ input[type="submit"] {
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	}
 }
+span.reg-btn {
+	background-color:  #0e7379;
+	color: #fff;
+	width: auto;
+	display: inline-block;
+	
+	a {
+
+	}
+	
+}
+article .entry-content span.reg-btn a,
+	article .entry-content p .reg-btn a {
+		background-color:  #0e7379;
+		color: #fff;
+		text-decoration: none;
+		display: block;
+		padding: 10px 25px;
+		@include transition(all ease .2s);
+		border: 0;
+		&:hover {
+			background-color: $color-orange;
+		}
+	}
