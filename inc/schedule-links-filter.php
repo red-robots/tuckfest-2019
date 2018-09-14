@@ -67,9 +67,7 @@ $i=0;
 // we'll store terms in this array so we don't repeat buttons of the same name.
 $second = array();
 
-// let's get music and yoga in here manually just because
-$second[] = 'music';
-$second[] = 'yoga';
+
 
 $wp_query = new WP_Query();
 $wp_query->query(array(
@@ -82,9 +80,9 @@ if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->th
 		// Get the ID and terms of each post
 		$theID = get_the_ID();
 		$terms = get_the_terms($theID, 'competition_type');
-
+		// $termsDemo = get_the_terms($theID, 'demo_clinic_type');
 		
-
+		// Loop through competition type
 		if($terms){
 			foreach ($terms as $term) {
 				$day = $term->name;
@@ -94,8 +92,22 @@ if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->th
 				}
 			}
 		}
+
 	endwhile; 
 endif; 
+
+// let's get music and yoga in here manually just because
+$second[] = 'Music';
+$second[] = 'Demos';
+$second[] = 'Yoga';
+
+
+// echo '</pre>';
+// print_r($second);
+// echo '</pre>';
+
+// alphabetize the dropdown.
+sort($second);
 
 // we Queried Everything for the Day's now let's create the buttons.
 
@@ -148,6 +160,18 @@ $wp_query->query(array(
 	// 'meta_key'			=> array('thursday_time_p', 'friday_time_p', 'saturday_time_p', 'sunday_time_p'),
 	// 'orderby'			=> 'meta_value',
 	// 'order'				=> 'ASC',
+	// 'meta_query' => array(
+ //        'relation' => 'AND',
+ //        'state_clause' => array(
+ //            'key' => 'state',
+ //            'value' => 'Wisconsin',
+ //        ),
+ //        'city_clause' => array(
+ //            'key' => 'city',
+ //            'compare' => 'EXISTS',
+ //        ), 
+ //    ),
+ //    'orderby' => 'city_clause',
 	'post_status' => array( 'publish', 'private' ),
 	'tax_query' => array(
 		array(
@@ -229,7 +253,7 @@ if( $postType == 'music') {
 } elseif( $postType == 'demo_clinic') {
 	$taxSlug = 'demo-clinic-type';
 	$tax = 'demo_clinic_type';
-	$type = '';
+	$type = 'demos';
 } elseif( $postType == 'yoga') {
 	$taxSlug = 'yoga-day';
 	$tax = 'yoga_day';
@@ -292,6 +316,11 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 
 	<div class="item
 		<?php 
+		if($days) {
+			foreach ($days as $day) {
+				$day = $day->name;
+			}
+		}
 		// if($days){
 		// 	foreach ($terms as $term) {
 		// 		$day = $term->name;
@@ -324,6 +353,11 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 			echo ' music ';
 		}
 
+		// Demos and Clinics is a post type, but doesn't have a taxonomy, so we gotta add it.
+		if( get_post_type() == 'demo_clinic' ) {
+			echo ' demos ';
+		}
+
 		// Gotta pull the Yoga Too!
 		// But! we will see if there is a "Yoga Day"
 		// But we won't pull it as is, because is redundant as a term for the first filter
@@ -341,6 +375,11 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 				<div class="title">
 					<h2><?php the_title(); ?></h2>
 				</div>
+				<?php if($day) { ?>
+					<div class="info-item">
+						<?php echo $day; ?>
+					</div>
+				<?php } ?>
 				<?php if($startTime) { ?>
 					<div class="info-item">
 						TIME: <?php 
@@ -356,9 +395,9 @@ $yogaDay = get_the_terms($theID, 'yoga_day');
 					</div>
 				<?php } ?>
 				<?php if($type) { ?>
-					<div class="info-item">
+					<!-- <div class="info-item">
 						<?php echo $type; ?>
-					</div>
+					</div> -->
 				<?php } ?>
 				<?php if($instructor) { ?>
 					<div class="info-item">
