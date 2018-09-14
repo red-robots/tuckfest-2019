@@ -514,7 +514,7 @@ body {
   top: 0px;
   left: 15px;
   border-radius: 4px;
-  z-index: 10001;
+  z-index: 100002;
   @media screen and (min-width: $tabwidth) {
   	display: none;
   }
@@ -558,7 +558,7 @@ nav.mobilemenu {
   width: 100%;
   padding: 100px 40px 60px 40px;
   overflow-y: auto;
-  z-index: 10000;
+  z-index: 100001;
   @include transform(translateX(100%));
   @include transition(transform .55s cubic-bezier(0.785, 0.135, 0.15, 0.86));
   @media screen and (min-width: $tabwidth) {

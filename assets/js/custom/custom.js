@@ -27,6 +27,10 @@ jQuery(document).ready(function ($) {
         inline:true, 
         width:"90%"
     });
+    $(".youtube").colorbox({
+        inline:true, 
+        width:"60%"
+    });
 
     	/*
 	*

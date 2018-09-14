@@ -101,7 +101,7 @@ section.schedule-music {
 			height: 100%;
 			float: left;
 			position: relative;
-			z-index: 1000;
+			z-index: 100;
 		}
 		.image {
 			width: 100%;
@@ -484,7 +484,9 @@ section.faqs {
       }
     }
 }
-
+.video {
+	padding: 50px;
+}
 section.photo-gallery {
 	width: 90%;
 	overflow: hidden;

@@ -71,24 +71,34 @@
 			overflow:visible;  
 			position:absolute; 
 			top:10px; 
-			background:url(images/controls-new.png); 
-			background-size: 150px 100px;
+			// background:url(images/controls-new.png); 
+			background-size: cover;
 			background-repeat: no-repeat;
-			width:50px; 
-			height:50px; 
+			width:25px; 
+			height:25px; 
 			text-indent:-9999px;
 			box-shadow:none;
 		}
-        
+		#cboxPrevious {
+			background:url(images/prev.png); 
+		}
+        #cboxNext {
+			background:url(images/next.png); 
+		}
+		#cboxClose {
+			background:url(images/close.png); 
+		}
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
-        #cboxPrevious{left:20px; background-position: -0px -0px;}
-        #cboxPrevious:hover{background-position:-0px -50px;}
-        #cboxNext{left:90px; background-position:-50px -0px;}
-        #cboxNext:hover{background-position:-50px -50px;}
-        #cboxClose{right:20px; background-position:-100px -0px;}
-        #cboxClose:hover{background-position:-100px -50px;}
+        #cboxPrevious{left:20px; opacity: .7;}
+       
+        #cboxNext{left:90px; opacity: .7; }
+        
+        #cboxClose{right:20px; opacity: .7;}
+        #cboxClose:hover, #cboxNext:hover, #cboxPrevious:hover {
+        	opacity: 1;
+        }
 
         .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0px; right:27px;}
         .cboxSlideshow_on #cboxSlideshow:hover{background-position:-150px 0px;}

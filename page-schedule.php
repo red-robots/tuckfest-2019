@@ -26,14 +26,14 @@ get_header(); ?>
 				</div><!-- #post-## -->
 			<?php endwhile; // End of the loop.?>
 
-			<?php  //include( locate_template( 'inc/schedule-links-filter.php', false, false ) );  ?>
+			<?php  include( locate_template( 'inc/schedule-links-filter.php', false, false ) );  ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<!-- <h1 class="entry-title">Full Schedule</h1> -->
+			<h1 class="entry-title">Full Schedule</h1>
 		</header><!-- .entry-header -->
 
 	</div><!-- #post-## -->

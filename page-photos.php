@@ -7,13 +7,16 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+
+$i=0;
+?>
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post(); $i++;
 			 
 				get_template_part('inc/banner');
 
@@ -37,14 +40,37 @@ get_header(); ?>
 							// echo '<pre>';
 							// print_r($image);
 							// echo '</pre>';
+							if( $image['caption'] ) {
+								$output = $image['caption'];
+								$class='youtube';
+							} else {
+								$output = $image['url'];
+								$class='gallery';
+							}
+							
 
 							?>
 							<div class="gal-thumb">
-								<a class="gallery" href="<?php echo $image['url']; ?>">
-									<img src="<?php echo $image['sizes']['tile']; ?>">
-								</a>
-								
-							</div>
+								<?php if( $image['caption'] ) { ?>
+									<a class="<?php echo $class; ?>" href="#video-<?php echo $i; ?>">
+										<img src="<?php echo $image['sizes']['tile']; ?>">
+									</a>
+								<?php } else { ?>
+									<a class="<?php echo $class; ?>" href="<?php echo $output; ?>">
+										<img src="<?php echo $image['sizes']['tile']; ?>">
+									</a>
+								<?php } ?>
+									
+								</div>
+
+								<?php if( $image['caption'] ) { ?>
+									<div style="display: none;">
+										<div id="video-<?php echo $i; ?>" class="video">
+											<?php echo wp_oembed_get($output); ?>
+										</div>
+									</div>
+								<?php } ?>
+
 						<?php }
 						 ?>
 					</section>
