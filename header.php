@@ -30,6 +30,16 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
+			<div class="mobile-header-scroll">
+				<div class="">
+	            	<a href="<?php bloginfo('url'); ?>">
+		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+		            </a>
+		            <div class="event-date-mobile">
+			        	<?php the_field('event_date', 'option'); ?>
+			        </div>
+	            </div>
+			</div>
 			<div class="mobile-wrapper">
 				<?php if(is_home()) { ?>
 		            <h1 class="logo desktop">

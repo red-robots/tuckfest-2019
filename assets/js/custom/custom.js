@@ -13,6 +13,10 @@ jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
 
+    $( window ).scroll(function() {
+      $( ".mobile-header-scroll" ).addClass( "scrolled");
+      $( "#masthead" ).addClass( "scrolled");
+    });
     /*
     *
     *   Colorbox

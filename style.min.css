@@ -1890,16 +1890,20 @@ body{font-family:"Futura",sans-serif;background-image:url(images/bg.jpg);backgro
 .wrapper{width:100%;margin:0 auto}
 @media screen and (min-width:600px){.wrapper{width:100%}
 }@media screen and (min-width:1200px){.wrapper{width:90%;padding:0}
-}.page-wrapper{width:100%;margin:10px auto 0 auto;padding:20px}
+}.page-wrapper{width:100%;margin:90px auto 0 auto;padding:20px}
 @media screen and (min-width:600px){.page-wrapper{width:90%;padding:0;margin:0 auto}
 }@media screen and (min-width:1200px){.page-wrapper{width:90%;padding:0}
+}.page-wrapper.scrolled{margin:60px auto 0 auto}
+@media screen and (min-width:600px){.page-wrapper.scrolled{margin:0 auto}
 }.mobile-wrapper{width:60%;margin:0 auto;padding:0}
 @media screen and (min-width:600px){.mobile-wrapper{width:100%;padding:0;background-color:#fff}
 }.site{width:100%;margin:0 auto;background-color:#fff;overflow:hidden}
 @media screen and (min-width:600px){.site{width:90%}
 }@media screen and (min-width:1200px){.site{width:80%;padding:3.5%}
 }#masthead{width:100%;position:fixed;z-index:1000;background-image:url(images/mobile-bg.png);background-repeat:no-repeat;background-size:cover;top:0;padding:0}
-@media screen and (min-width:600px){#masthead{background-image:none;position:relative}
+@media screen and (min-width:600px){#masthead{background-image:none;position:relative;height:auto}
+}#masthead.scrolled{height:60px}
+@media screen and (min-width:600px){#masthead.scrolled{height:auto}
 }#banner{width:100%;float:left;position:relative}
 #banner.home{border-bottom:5px solid #f9a020}
 .content-wrapper{width:100%;margin:0 auto;padding:20px}
@@ -1911,19 +1915,23 @@ body{font-family:"Futura",sans-serif;background-image:url(images/bg.jpg);backgro
 .widget-area{width:100%;margin:0 auto}
 @media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:0}
 }@media screen and (min-width:1200px){}
-.logo,h1.logo{width:20%;margin:10px auto}
+.logo,h1.logo{width:50px;margin:10px auto}
 @media screen and (min-width:600px){.logo,h1.logo{width:80%;margin:0 auto 0 auto}
 }@media screen and (min-width:1200px){.logo,h1.logo{width:847px}
 }.logo img,h1.logo img{width:100%}
 .logo a,h1.logo a{width:100%;display:block}
 .logo.desktop,h1.logo.desktop{display:none}
 @media screen and (min-width:600px){.logo.desktop,h1.logo.desktop{display:block}
-}.logo.mobile,h1.logo.mobile{display:block}
+}.logo.mobile,h1.logo.mobile{display:block;position:absolute;left:50%;top:0;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}
 @media screen and (min-width:600px){.logo.mobile,h1.logo.mobile{display:none}
-}.event-date{width:100%;text-align:center;font-family:"GoBold",sans-serif;text-transform:uppercase;font-size:8px;color:#0e7379;letter-spacing:5px;margin:0;display:none}
-@media screen and (min-width:600px){.event-date{font-size:20px;letter-spacing:12px;margin:20px 0 30px 0;display:block}
-}@media screen and (min-width:1200px){.event-date{font-size:30px;margin:30px 0 40px 0}
-}.page{width:100%;clear:both}
+}.mobile-header-scroll{width:65%;margin:0 auto 20px auto;background-color:white;padding:2%;overflow:hidden;-webkit-transition:all ease .4s;transition:all ease .4s;position:relative;z-index:100001}
+@media screen and (min-width:600px){.mobile-header-scroll{display:none}
+}.mobile-header-scroll.scrolled{height:0;padding:0}
+.event-date,.event-date-mobile{width:100%;text-align:center;font-family:"GoBold",sans-serif;text-transform:uppercase;font-size:8px;color:#0e7379;letter-spacing:5px;margin:0;display:none}
+@media screen and (min-width:600px){.event-date,.event-date-mobile{font-size:20px;letter-spacing:12px;margin:20px 0 30px 0;display:block}
+}@media screen and (min-width:1200px){.event-date,.event-date-mobile{font-size:30px;margin:30px 0 40px 0}
+}.event-date-mobile{display:block}
+.page{width:100%;clear:both}
 article{width:100%;padding:20px 0;position:relative;float:left;margin:0 0 60px 0}
 article .featured-image{width:50%;position:relative;z-index:1;float:left}
 article .featured-image img{width:100%}
