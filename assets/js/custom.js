@@ -319,5 +319,16 @@ var $container = $('#container'),
             }
         }); // end register flexslider
     });
+
+    /* RESET FILTER OPTIONS */
+    $('body').on("click",".eventLinkp",function(e){
+        e.preventDefault();
+        $("select#filter_by_days").val('*');
+        $("select#filter_by_type").val('*');
+        var link = $(this).attr('href');
+        setTimeout(function(){
+            window.location.href = link;
+        },100);
+    });
 });// END #####################################    END
 

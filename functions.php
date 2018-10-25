@@ -68,3 +68,29 @@ require get_template_directory() . '/inc/block-all-registration-and-comments.php
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/* convert hh:mm:ss to minutes */
+function convert_time_to_minutes($time){
+$time = explode(':', $time);
+return ($time[0]*60) + ($time[1]) + ($time[2]/60);
+} 
+
+
+function sortArray($array, $key, $sort='ASC') {
+    $sorter=array();
+    $ret=array();
+    reset($array);
+    foreach ($array as $ii => $va) {
+        $sorter[$ii]=$va[$key];
+    }   
+    if($sort=='ASC') {
+    	asort($sorter);
+    } else {
+    	arsort($sorter);
+    }
+    foreach ($sorter as $ii => $va) {
+        $ret[$ii]=$array[$ii];
+    }
+    $array=$ret;
+    return $array;
+}

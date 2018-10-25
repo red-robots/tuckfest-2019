@@ -1,4 +1,7 @@
 <?php 
+// echo '<pre>';
+// print_r($terms);
+// echo '</pre>';
 $i=0; 
 /*
 ################   First we Query the Day ##############
@@ -6,14 +9,13 @@ $i=0;
 */
 // we'll store terms in this array so we don't repeat buttons of the same name.
 $first = array();
-
-$wp_query = new WP_Query();
-$wp_query->query(array(
+$args = array(
 	'post_type'=> array('yoga','demo_clinic', 'competition','music'),
 	'posts_per_page' => -1,
 	'post_status' => array( 'publish', 'private' ),
-	
-));
+);
+$wp_query = new WP_Query();
+$wp_query->query($args);
 if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 		// Get the ID and terms of each post
 		$theID = get_the_ID();
@@ -25,7 +27,6 @@ if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->th
 		// 		$first[] = $day;
 		// 	}
 		// }
-
 		// The above works, but we're just going to do the days manually for now.
 		$first = array('Thursday', 'Friday', 'Saturday', 'Sunday');
 
@@ -34,12 +35,13 @@ endif;
 
 // we Queried Everything for the Day's now let's create the buttons.
 
+
 ?>
 <div id="filters" class=" filters">
 	<h2 class="filter-title">Filter By:</h2>
 
 	<!-- <div class="button-group group1 filters-button-group" data-filter-group="day"> -->
-	<select id="filter_by_days" class="option-set clearfix"  data-filter-group="day">
+	<select class="option-set clearfix"  data-filter-group="day">
 			<!-- <button class="filbutton button showall is-checked" data-filter="*">show all</button> -->
 			<option value="*" data-filter-value="" class="selected">All Days</option>
 		<?php 
@@ -63,6 +65,8 @@ $i=0;
 */
 // we'll store terms in this array so we don't repeat buttons of the same name.
 $second = array();
+
+
 
 $wp_query = new WP_Query();
 $wp_query->query(array(
@@ -96,6 +100,11 @@ $second[] = 'Music';
 $second[] = 'Demos';
 $second[] = 'Yoga';
 
+
+// echo '</pre>';
+// print_r($second);
+// echo '</pre>';
+
 // alphabetize the dropdown.
 sort($second);
 
@@ -107,7 +116,7 @@ sort($second);
 	<!-- <h2 class="filter-title">Filter By Activity Type:</h2> -->
 
 	<!-- <div class="button-group group2 filters-button-group" data-filter-group="type"> -->
-	<select id="filter_by_type" class="option-set clearfix"  data-filter-group="type">
+	<select class="option-set clearfix"  data-filter-group="type">
 			<!-- <button class="filbutton button showall is-checked" data-filter="*">show all</button> -->
 			<option value="*" data-filter-value="" class="selected">All</option>
 		<?php 
@@ -126,164 +135,181 @@ sort($second);
 	<!-- </div> -->
 </div>
 
-
-
-	
-
-<?php 
-/*
-################   Third we Query the All that will be filtered   ##############
-
-*/ 
-$newList = array();
-$i=0; 
-$wp_query = new WP_Query();
-$arg = array(
-	'post_type'=> array('yoga','demo_clinic', 'competition','music'),
-	'posts_per_page' => -1,
-	'post_status' => array( 'publish', 'private' ),
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'event_day', // your custom taxonomy
-			'field' => 'slug',
-			'terms' => array( 'thursday', 'friday', 'saturday', 'sunday' ) // the terms (categories) you created
-		)
-	)
-);
-$events = get_posts($arg);
-
-$day_option['thursday'] = array(
-						'start'=>'thursday_time_p',
-						'end'=>'thursday_time_p_end',
-						'music'=>'thursday-line-up'
-					);
-$day_option['friday'] = array(
-						'start'=>'friday_time_p',
-						'end'=>'friday_time_p_end',
-						'music'=>'friday-line-up'
-					);
-$day_option['saturday'] = array(
-						'start'=>'saturday_time_p',
-						'end'=>'saturday_time_p_end',
-						'music'=>'saturday-line-up'
-					);
-$day_option['sunday'] = array(
-						'start'=>'sunday_time_p',
-						'end'=>'sunday_time_p_end',
-						'music'=>'sunday-line-up'
-					);
-
-$postList = array();
-if ( $events ) {  
-	foreach($events as $row) {
-
-		$theID = $row->ID;
-		$postType = $row->post_type;
-		$event_name = $row->post_title;
-
-		/* List post according to day. */
-		if($postType=='yoga') {
-			$terms = get_the_terms($theID, 'yoga_day');
-			foreach ( $terms as $term ) {
-				$day = $term->slug;
-				$postList[] = array(
-								'day'=>$day,
-								'post_id'=>$theID
-							);
-			}
-		} else {
-			$terms = get_the_terms($theID, 'event_day');
-			foreach ( $terms as $term ) {
-				$day = $term->slug;
-				$postList[] = array(
-								'day'=>$day,
-								'post_id'=>$theID
-							);
-			}
-		}
-
-	}
-} 
-
-$eventList = array();
-if($postList) {
-	foreach($postList as $p) {
-		$post_id = $p['post_id'];
-		$day = $p['day'];
-		if( array_key_exists($day, $day_option) ) {
-			$start_field = $day_option[$day]['start'];
-			$startTime = get_field($start_field,$post_id);
-
-			/* Convert start time to 24-hour format. Then convert to minutes. */
-			$time_in_24_hour_format  = date("H:i", strtotime($startTime));
-			$time_in_minutes = convert_time_to_minutes( $time_in_24_hour_format );
-			$p['start_in_minutes'] = $time_in_minutes;
-			$eventList[$day][] = $p;
-		}
-	}
-}
-
-
-$records = array();
-foreach($day_option as $day_name => $val ) {
-	if( isset($eventList[$day_name]) ) {
-		/* Re-order arrays according to start time in Ascending order. See functions.php */
-		$list = sortArray( $eventList[$day_name],'start_in_minutes','ASC' ); 
-		foreach($list as $itm) {
-			$records[] = $itm;
-		}
-	}
-}
-?>
-
 <div id="outer-container" class="closed">
-<div id="container">
-
-	<?php if($records) { ?>
-		<?php foreach($records as $row) {
-			$post_id = $row['post_id']; 
-			$eventName = get_the_title($post_id);
-			$postType = get_post_type($post_id);
-			$day = $row['day'];
-			$start_field = $day_option[$day]['start'];
-			$startTime = get_field($start_field,$post_id);
-
-			$end_field = $day_option[$day]['end'];
-			$EndTime = get_field($end_field,$post_id);
-
-			$classes = $day;
-
-			$activity = get_the_terms($post_id, 'competition_type');
-			if($activity) {
-				foreach( $activity as $act ) {
-					$act = $act->slug;
-					$classes .= ' ' . $act;
-				}
-			}
+	<div id="container">
+	<?php
+	$args = array(
+		'post_type'=> array('yoga','demo_clinic', 'competition','music'),
+		'posts_per_page' => -1,
+		'post_status' => array( 'publish', 'private' ),
+	);
+	$events = get_posts($args);
+	$records = array();
+	$final_lists = array();
+	$day_option['thursday'] = array(
+							'start'=>'thursday_time_p',
+							'end'=>'thursday_time_p_end'
+						);
+	$day_option['friday'] = array(
+							'start'=>'friday_time_p',
+							'end'=>'friday_time_p_end'
+						);
+	$day_option['saturday'] = array(
+							'start'=>'saturday_time_p',
+							'end'=>'saturday_time_p_end'
+						);
+	$day_option['sunday'] = array(
+							'start'=>'sunday_time_p',
+							'end'=>'sunday_time_p_end'
+						);
+	if($events) {
+		foreach($events as $e) {
+			$theID = $e->ID;
+			$eventName = $e->post_title;
+			$terms = get_the_terms($theID, 'event_day');
+			$activity = get_the_terms($theID, 'competition_type');
+			$yogaDay = get_the_terms($theID, 'yoga_day');
+			$postType = get_post_type($theID);
+			$classes = array();
 
 			if( $postType == 'music' ) {
-				$classes .= ' music';
+				$classes[] = 'music ';
 			}
 
 			if( $postType == 'demo_clinic' ) {
-				$classes .= ' demos';
+				$classes[] = 'demos ';
 			}
 
-			if( $postType == 'yoga' ) {
-				$classes .= ' yoga';
+			if($activity) {
+				foreach($activity as $term) {
+					$slug = $term->slug;
+					$classes[] = $slug.' ';
+				}
 			}
 
+			if($terms) {
+				foreach($terms as $term) {
+					$classes[] = $term->slug . ' ';
+				}
+			}
 
-			$location = get_field('location',$post_id);
+			if($yogaDay) {
+				foreach($yogaDay as $term) {
+					$classes[] = $term->slug . ' ';
+				}
+			}
 
-			// Instructor
-			$instructor = get_field('instructor',$post_id);
-			$instructorInfo = get_field('instructor_information',$post_id);
+			if($terms) {
+				foreach($terms as $term) {
+					$slug = $term->slug;
+					$day = $slug;
+					if( array_key_exists($day, $day_option) ) {
+						$start_field = $day_option[$day]['start'];
+						$end_field = $day_option[$day]['end'];
+						$startTime = get_field($start_field, $theID);
+						$EndTime = get_field($end_field, $theID);
+						$time_in_24_hour_format  = date("H:i", strtotime($startTime));
+						$time_in_minutes = convert_time_to_minutes( $time_in_24_hour_format );
+						$records[$slug][] = array(
+									'post_id'=>$theID,
+									'event_name'=>$eventName,
+									'post_type'=>$postType,
+									'day_name'=>$term->name,
+									'day_slug'=>$slug,
+									'start_time'=>$startTime,
+									'end_time'=>$EndTime,
+									'start_time_in_minutes'=>$time_in_minutes,
+									'classes'=>$classes
+								);
+					}
+					
+				}
+			}
+			if($yogaDay) {
+				foreach($yogaDay as $term) {
+					$slug = $term->slug;
+					$day = $slug;
+					if( array_key_exists($day, $day_option) ) {
+						$start_field = $day_option[$day]['start'];
+						$end_field = $day_option[$day]['end'];
+						$startTime = get_field($start_field, $theID);
+						$EndTime = get_field($end_field, $theID);
+						$time_in_24_hour_format  = date("H:i", strtotime($startTime));
+						$time_in_minutes = convert_time_to_minutes( $time_in_24_hour_format );
+						$records[$slug][] = array(
+									'post_id'=>$theID,
+									'event_name'=>$eventName,
+									'post_type'=>$postType,
+									'day_name'=>$term->name,
+									'day_slug'=>$slug,
+									'start_time'=>$startTime,
+									'end_time'=>$EndTime,
+									'start_time_in_minutes'=>$time_in_minutes,
+									'classes'=>$classes
+								);
+					}
+					
+				}
+			}
 
-			// Map (in options)
-			$mapLink = get_field('map_link', 'option');
+		}
 
-			if( $postType == 'music') {
+		
+		foreach ($day_option as $k => $v) {
+			if( isset($records[$k]) ) {
+				$arrs = $records[$k];
+				$sorted = sortArray($arrs,'start_time_in_minutes','DESC');
+				foreach($sorted as $item) {
+					$final_lists[] = $item;
+				}
+			}
+		}
+
+	} ?>
+
+		<?php if($final_lists) { ?>
+			<?php foreach($final_lists as $row) {
+				$post_id = $row['post_id']; 
+				$eventName = $row['event_name'];
+				$day = $row['day_name'];
+				$day_slug = $row['day_slug'];
+				$startTime = $row['start_time'];
+				$EndTime = $row['end_time'];
+				$postType = $row['post_type'];
+				$classes_arr = ($row['classes']) ? array_unique($row['classes']) : '';
+				//$classes = ($classes_arr) ? ( implode(' ', $classes_arr) ) : '';
+				$classes = $day_slug;
+
+				$activity = get_the_terms($post_id, 'competition_type');
+				if($activity) {
+					foreach( $activity as $act ) {
+						$act = $act->slug;
+						$classes .= ' ' . $act;
+					}
+				}
+
+				if( $postType == 'music' ) {
+					$classes .= ' music';
+				}
+
+				if( $postType == 'demo_clinic' ) {
+					$classes .= ' demos';
+				}
+
+				if( $postType == 'yoga' ) {
+					$classes .= ' yoga';
+				}
+
+				$location = get_field('location',$post_id);
+
+				// Instructor
+				$instructor = get_field('instructor',$post_id);
+				$instructorInfo = get_field('instructor_information',$post_id);
+
+				// Map (in options)
+				$mapLink = get_field('map_link', 'option');
+
+				if( $postType == 'music') {
 					$taxSlug = 'event-day';
 					$tax = 'event_day';
 					$type = 'Music';
@@ -314,7 +340,15 @@ foreach($day_option as $day_name => $val ) {
 
 
 				if( $postType == 'music' ) {
-					$page = $day_option[$day]['music'];
+					if( $term == 'thursday') {
+						$page = 'thursday-line-up';
+					} elseif( $term == 'friday') {
+						$page = 'friday-line-up';
+					} elseif( $term == 'saturday') {
+						$page = 'saturday-line-up';
+					} elseif( $term == 'sunday') {
+						$page = 'sunday-line-up';
+					}
 					$url = get_bloginfo('url').'/tuckfest-music/'.$page.'/#'.$hash;
 				} else {
 					$url = get_bloginfo('url').'/'.$taxSlug.'/'.$term.'/#'.$hash;
@@ -328,7 +362,7 @@ foreach($day_option as $day_name => $val ) {
 							<h2><?php echo $eventName; ?></h2>
 						</div>
 						<div class="info-item">
-							<?php echo ucwords($day); ?>
+							<?php echo $day; ?>
 						</div>
 						<?php if($startTime) { ?>
 							<div class="info-item">
@@ -350,16 +384,19 @@ foreach($day_option as $day_name => $val ) {
 							</div>
 						<?php } ?>
 						<div class="info-item">
-							<a class="eventLinkp" href="<?php echo $url; ?>">
+							<a href="<?php echo $url; ?>">
 								Information & Description
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<?php } ?>
 		<?php } ?>
-	<?php } ?>
 
+	</div>
 </div>
-</div>
+
+
+
 
