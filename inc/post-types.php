@@ -134,6 +134,69 @@ function js_custom_init()
   
   ); 
   register_post_type('yoga',$args); // name used in query
+
+  $labels = array(
+  'name' => _x('Athlete', 'post type general name'),
+    'singular_name' => _x('Athlete', 'post type singular name'),
+    'add_new' => _x('Add New', 'Athlete'),
+    'add_new_item' => __('Add New Athlete'),
+    'edit_item' => __('Edit Athlete'),
+    'new_item' => __('New Athlete'),
+    'view_item' => __('View Athlete'),
+    'search_items' => __('Search Athlete'),
+    'not_found' =>  __('No Athlete found'),
+    'not_found_in_trash' => __('No Athlete found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Athletes'
+  );
+  $args = array(
+  'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+  
+  ); 
+  register_post_type('athlete',$args); // name used in query
+
+
+     $labels = array(
+  'name' => _x('Hotels', 'post type general name'),
+    'singular_name' => _x('Hotel', 'post type singular name'),
+    'add_new' => _x('Add New', 'Hotel'),
+    'add_new_item' => __('Add New Hotel'),
+    'edit_item' => __('Edit Hotel'),
+    'new_item' => __('New Hotel'),
+    'view_item' => __('View Hotel'),
+    'search_items' => __('Search Hotel'),
+    'not_found' =>  __('No Hotel found'),
+    'not_found_in_trash' => __('No Hotel found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Hotels'
+  );
+  $args = array(
+  'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+  
+  ); 
+  register_post_type('hotel',$args); // name used in query
   
   // Add more between here
   
