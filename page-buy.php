@@ -43,9 +43,14 @@ get_header(); ?>
 			));
 			if ($wp_query->have_posts()) :  ?>
 			<section class="types">
-			<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); ?>
+			<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
-				<div class="col">
+
+				$pClass = sanitize_title_with_dashes( get_the_title() );
+
+			?>
+
+				<div class="col <?php echo $pClass; ?>">
 					<a href="<?php the_permalink(); ?>">
 						<div class="image">
 							<?php the_post_thumbnail('tile'); ?>

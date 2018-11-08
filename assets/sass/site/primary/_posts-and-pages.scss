@@ -310,12 +310,21 @@ section.types {
 			flex-basis: 23%;
 			margin: 0 5% 70px 5%;
 		}
+		&.about-tuck-fest {
+			@media screen and (min-width: $tabwidth) {
+				display: none;
+			}	
+		}
 
 		.image {
 			width: 100%;
 			position: relative;
 			padding: 3px;
 			float: left;
+			min-height: 70px;
+			@media screen and (min-width: $tabwidth) {
+				min-height: 30px;
+			}
 			.mobile, .desktop {
 				width: 100%;
 				img {
@@ -385,6 +394,7 @@ section.types {
 		}
 	}
 }
+
 .tiles {
 	width: 100%;
 	display: flex;

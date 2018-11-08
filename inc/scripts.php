@@ -4,7 +4,7 @@
  */
 function acstarter_scripts() {
 	wp_enqueue_style( 
-		'acstarter-style', get_template_directory_uri() . '/style.min.css' );
+		'acstarter-style', get_template_directory_uri() . '/style.css' );
 
 	wp_deregister_script('jquery');
 		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2', true);

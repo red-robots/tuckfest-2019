@@ -2018,8 +2018,10 @@ section.types{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-fl
 @media screen and (min-width:600px){section.types{padding-top:60px}
 }section.types .col{padding:0 0 30px 0;margin:0 0 30px 0;text-align:center;position:relative;-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-transition:all ease .4s;transition:all ease .4s}
 @media screen and (min-width:600px){section.types .col{-webkit-flex-basis:23%;-ms-flex-preferred-size:23%;flex-basis:23%;margin:0 5% 70px 5%}
-}section.types .col .image{width:100%;position:relative;padding:3px;float:left}
-section.types .col .image .mobile,section.types .col .image .desktop{width:100%}
+}@media screen and (min-width:600px){section.types .col.about-tuck-fest{display:none}
+}section.types .col .image{width:100%;position:relative;padding:3px;float:left;min-height:70px}
+@media screen and (min-width:600px){section.types .col .image{min-height:30px}
+}section.types .col .image .mobile,section.types .col .image .desktop{width:100%}
 section.types .col .image .mobile img,section.types .col .image .desktop img{width:100%}
 @media screen and (min-width:600px){section.types .col .image .mobile{display:none}
 }section.types .col .image .desktop{display:none}
