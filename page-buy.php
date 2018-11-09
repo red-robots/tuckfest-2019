@@ -37,7 +37,7 @@ get_header(); ?>
 				'post_type'         => 'page',
 				'post_parent'       => $post->ID,                               
 			    'order'             => 'ASC',
-			    'orderby'           => 'name',
+			    'orderby'           => 'menu_order',
 			    'posts_per_page'    => -1
 				
 			));

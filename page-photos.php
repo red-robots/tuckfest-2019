@@ -16,7 +16,7 @@ $i=0;
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post(); $i++;
+			while ( have_posts() ) : the_post(); //$i++;
 			 
 				get_template_part('inc/banner');
 
@@ -39,10 +39,13 @@ $i=0;
 
 							// echo '<pre>';
 							// print_r($image);
+							// echo $i;
 							// echo '</pre>';
+
 							if( $image['caption'] ) {
 								$output = $image['caption'];
 								$class='youtube';
+								$i++;
 							} else {
 								$output = $image['url'];
 								$class='gallery';
@@ -76,8 +79,7 @@ $i=0;
 					</section>
 
 
-			<?php endwhile; // End of the loop.
-			?>
+			<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
