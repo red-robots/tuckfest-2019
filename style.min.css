@@ -1962,6 +1962,8 @@ footer.site-footer .presented{width:100%;text-align:center;clear:both;display:-w
 footer.site-footer .presented .thing{width:auto;display:inline-block;margin:0 10px;text-transform:uppercase;color:#0e7379;font-size:18px;height:45px;line-height:45px}
 footer.site-footer .presented .image{width:200px;display:inline-block;margin:0 10px;height:45px}
 footer.site-footer .presented .image img{width:100%}
+.error{width:100%}
+.error img{width:100%}
 .sticky{display:block}
 .byline,.updated:not(.published){display:none}
 .single .byline,.group-blog .byline{display:inline}
