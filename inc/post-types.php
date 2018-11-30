@@ -197,6 +197,38 @@ function js_custom_init()
   
   ); 
   register_post_type('hotel',$args); // name used in query
+
+
+$labels = array(
+  'name' => _x('F & B', 'post type general name'),
+    'singular_name' => _x('F & B', 'post type singular name'),
+    'add_new' => _x('Add New', 'F & B'),
+    'add_new_item' => __('Add New F & B'),
+    'edit_item' => __('Edit F & B'),
+    'new_item' => __('New F & B'),
+    'view_item' => __('View F & B'),
+    'search_items' => __('Search F & B'),
+    'not_found' =>  __('No F & B found'),
+    'not_found_in_trash' => __('No F & B found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'F & B'
+  );
+  $args = array(
+  'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+  
+  ); 
+  register_post_type('food_and_beverage',$args); // name used in query
   
   // Add more between here
   
