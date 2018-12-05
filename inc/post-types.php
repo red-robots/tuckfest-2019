@@ -299,7 +299,7 @@ function build_taxonomies() {
   register_taxonomy( 'athlete_type', 'athlete',
   array( 
     'hierarchical' => true, // true = acts like categories false = acts like tags
-    'label' => 'Yoga Day', 
+    'label' => 'Type', 
     'query_var' => true, 
     'rewrite' => true ,
     'show_admin_column' => true,

@@ -64,11 +64,75 @@ $comingSoon = get_field('coming_soon', 'option');
 			array(
 				'taxonomy' => 'athlete_type', // your custom taxonomy
 				'field' => 'slug',
-				'terms' => array( 'routesetters' ) // the terms (categories) you created
+				'terms' => array( 'routesetter' ) // the terms (categories) you created
 			)
 		)
 	));
 	if ($wp_query->have_posts()) : while ($wp_query->have_posts()) :  $wp_query->the_post(); ?>	
+
+
+		<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
+				<div class="featured-image">
+				<header class="entry-header">
+					<?php the_title( '<h1 class="">', '</h1>' ); ?>
+				</header><!-- .entry-header -->
+					<?php 
+					if(has_post_thumbnail()) {
+						the_post_thumbnail('tile');
+					} else { ?>
+						<img src="<?php echo $comingSoon['url']; ?>">
+					<?php } ?>
+				</div>
+				
+				<div class="copy">
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+					<div class="offset-border"></div>
+				</div>
+			</article><!-- #post-## -->
+
+
+	<?php endwhile; endif; ?>
+
+
+	<?php
+		$wp_query = new WP_Query();
+		$wp_query->query(array(
+		'post_type'=>'athlete',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'athlete_type', // your custom taxonomy
+				'field' => 'slug',
+				'terms' => array( 'featured-athlete' ) // the terms (categories) you created
+			)
+		)
+	));
+	if ($wp_query->have_posts()) : while ($wp_query->have_posts()) :  $wp_query->the_post(); ?>	
+
+
+		<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
+				<div class="featured-image">
+				<header class="entry-header">
+					<?php the_title( '<h1 class="">', '</h1>' ); ?>
+				</header><!-- .entry-header -->
+					<?php 
+					if(has_post_thumbnail()) {
+						the_post_thumbnail('tile');
+					} else { ?>
+						<img src="<?php echo $comingSoon['url']; ?>">
+					<?php } ?>
+				</div>
+				
+				<div class="copy">
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+					<div class="offset-border"></div>
+				</div>
+			</article><!-- #post-## -->
+
 
 	<?php endwhile; endif; ?>
 

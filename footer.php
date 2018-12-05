@@ -38,7 +38,20 @@
 				</div>
 				<?php endif; ?>
 			</div>
-			<?php if( have_rows('footer_sponsors', 'option') ) : ?>
+			
+		</div>  
+		<div class="row description">
+			<!-- <p>U.S. National Whitewater Center | 5000 Whitewater Center Parkway | Charlotte, NC 28214 | 704.391.3900 | info@usnwc.org</p> -->
+		</div>
+		<div class="presented">
+			<!-- <div class="thing">Presented By</div> -->
+			<div class="image">
+				<a href="https://usnwc.org" target="_blank">
+					<img src="<?php bloginfo('template_url'); ?>/images/presented.png">
+				</a>
+			</div>
+		</div>
+		<?php if( have_rows('footer_sponsors', 'option') ) : ?>
 			<div class="sponsors container rotator">
 				<ul>
 				<?php while( have_rows('footer_sponsors', 'option') ) : the_row();
@@ -56,17 +69,6 @@
 				</ul>
 			</div>
 			<?php endif; ?>
-		</div>  
-		<div class="row description">
-			<!-- <p>U.S. National Whitewater Center | 5000 Whitewater Center Parkway | Charlotte, NC 28214 | 704.391.3900 | info@usnwc.org</p> -->
-		</div>
-		<div class="presented">
-			<!-- <div class="thing">Presented By</div> -->
-			<div class="image">
-			<a href="https://usnwc.org" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/presented.png"></a>
-				
-			</div>
-		</div>
 	</footer>
 </div><!-- #page -->
 

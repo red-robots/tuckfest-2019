@@ -1957,7 +1957,8 @@ footer.site-footer li{display:inline-block}
 footer.site-footer li img{width:100%}
 footer.site-footer .social{width:auto;display:inline-block;margin:20px auto}
 footer.site-footer .social li{width:25px}
-footer.site-footer .sponsors li{width:50px;margin:0 10px}
+footer.site-footer .sponsors{padding:30px 0}
+footer.site-footer .sponsors li{width:75px;margin:0 10px}
 footer.site-footer .presented{width:100%;text-align:center;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 footer.site-footer .presented .thing{width:auto;display:inline-block;margin:0 10px;text-transform:uppercase;color:#0e7379;font-size:18px;height:45px;line-height:45px}
 footer.site-footer .presented .image{width:200px;display:inline-block;margin:0 10px;height:45px}
