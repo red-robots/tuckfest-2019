@@ -295,5 +295,17 @@ function build_taxonomies() {
     'rewrite' => array( 'slug' => 'yoga-day' ),
     '_builtin' => true
   ) );
+
+  register_taxonomy( 'athlete_type', 'athlete',
+  array( 
+    'hierarchical' => true, // true = acts like categories false = acts like tags
+    'label' => 'Yoga Day', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'athlete-type' ),
+    '_builtin' => true
+  ) );
   
 } // End build taxonomies

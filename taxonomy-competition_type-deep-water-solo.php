@@ -54,6 +54,24 @@ $comingSoon = get_field('coming_soon', 'option');
 
 		<?php endif; ?>
 
+
+		<?php
+		$wp_query = new WP_Query();
+		$wp_query->query(array(
+		'post_type'=>'athlete',
+		'posts_per_page' => -1,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'athlete_type', // your custom taxonomy
+				'field' => 'slug',
+				'terms' => array( 'routesetters' ) // the terms (categories) you created
+			)
+		)
+	));
+	if ($wp_query->have_posts()) : while ($wp_query->have_posts()) :  $wp_query->the_post(); ?>	
+
+	<?php endwhile; endif; ?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
