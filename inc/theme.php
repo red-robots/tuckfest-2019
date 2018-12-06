@@ -31,6 +31,13 @@ add_filter('the_title', 'the_title_trim');
 add_image_size('tile', 350, 350, array('center', 'center'));
 
 
+function wpsites_query( $query ) {
+if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+        $query->set( 'posts_per_page', 100 );
+    }
+}
+add_action( 'pre_get_posts', 'wpsites_query' );
+
 /*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/
