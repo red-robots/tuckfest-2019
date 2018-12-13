@@ -57,6 +57,9 @@ $comingSoon = get_field('coming_soon', 'option');
 
 				<article id="<?php echo $hash; ?>" <?php post_class(); ?>>
 					<div class="featured-image">
+						<header class="entry-header">
+							<?php the_title( '<h1 class="">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
 						<?php 
 						if(has_post_thumbnail()) {
 							the_post_thumbnail('tile');
@@ -65,9 +68,7 @@ $comingSoon = get_field('coming_soon', 'option');
 						<?php } ?>
 						
 					</div>
-					<header class="entry-header">
-						<?php the_title( '<h1 class="">', '</h1>' ); ?>
-					</header><!-- .entry-header -->
+					
 					<div class="copy">
 						
 
