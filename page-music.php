@@ -15,6 +15,12 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post(); 
 
+				$turnOn = get_field('turn_on_main_music_page');
+
+				// echo '<pre>';
+				// print_r($turnOn);
+				// echo '</pre>';
+
 			get_template_part('inc/banner');
 
 			?>
@@ -32,6 +38,11 @@ get_header(); ?>
 			<?php endwhile; // End of the loop.?>
 
 			<?php
+			/// If we want to show the child pages
+			if( $turnOn[0] == 'yes' ) :
+
+
+			// Query
 			$wp_query = new WP_Query();
 			$wp_query->query(array(
 				'post_type'         => 'page',
@@ -68,7 +79,7 @@ get_header(); ?>
 				
 
 
-				<!-- <div class="col">
+				<div class="col">
 					<a href="<?php the_permalink(); ?>">
 						<div class="image">
 							<?php the_post_thumbnail('tile'); ?>
@@ -80,13 +91,17 @@ get_header(); ?>
 							<div class="offset"></div>
 						</div>
 					</a>
-				</div> -->
+				</div>
 
 				<?php //} ?>
 
 				<?php endwhile; ?>
 				</section>
-			<?php endif; ?>
+			<?php endif; 
+
+				endif; // end if show pages is toggledd
+
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
