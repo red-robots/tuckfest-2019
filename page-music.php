@@ -47,8 +47,8 @@ get_header(); ?>
 			$wp_query->query(array(
 				'post_type'         => 'page',
 				'post_parent'       => $post->ID,                               
-			    'order'             => 'ASC',
-			    'orderby'           => 'name',
+			    // 'order'             => 'ASC',
+			    // 'orderby'           => 'name',
 			    'posts_per_page'    => -1
 				
 			));
