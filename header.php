@@ -202,7 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	    			<a target="_blank" href="https://fs24.formsite.com/usnwc/form141/index.html">Vendor Application</a>
 	    		</li>
 	    		<li>
-	    			<a href="<?php bloginfo('url'); ?>/about/photos/">Gallery</a>
+	    			<a href="<?php bloginfo('url'); ?>/about/gallery/">Gallery</a>
 	    		</li>
 	    	</ul>
     	</li>
