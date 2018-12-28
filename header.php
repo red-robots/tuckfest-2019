@@ -114,8 +114,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	    <li>
 	    	<a href="<?php bloginfo('url'); ?>/schedule">Schedule</a>
 	    </li>
-    	<li><a href="<?php bloginfo('url'); ?>/tuckfest-music">Music</a>
-	    	<!-- <ul class="dropdown">
+    	<li>Music
+    	<!-- <a href="<?php bloginfo('url'); ?>/tuckfest-music">Music</a> -->
+	    	<ul class="dropdown">
 	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/tuckfest-music/thursday-line-up/">Thursday Line-up</a>
 	    		</li>
@@ -131,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/tuckfest-music/past-line-ups/">Past Line-up</a>
 	    		</li>
-	    	</ul> -->
+	    	</ul>
     	</li>
     	<li>Competitions
 	    	<ul class="dropdown">
