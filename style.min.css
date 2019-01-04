@@ -1969,6 +1969,8 @@ footer.site-footer .presented .image img{width:100%}
 .byline,.updated:not(.published){display:none}
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
+section.divider{width:100%;text-align:center;padding:0 0 40px 0}
+section.divider h2{font-size:1.8rem}
 article .entry-content{width:100%;position:relative;z-index:10000}
 article .entry-content a{color:#fff;text-decoration:none;border-bottom:2px solid #ef4330;-webkit-transition:all ease .2s;transition:all ease .2s}
 article .entry-content a:hover{color:rgba(255,255,255,0.7)}

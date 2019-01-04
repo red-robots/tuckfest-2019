@@ -55,7 +55,12 @@ $comingSoon = get_field('coming_soon', 'option');
 		<?php endif; ?>
 
 
-		<?php
+
+<section class="divider">
+	<h2>ATHLETES</h2>
+</section>
+
+	<?php
 		$wp_query = new WP_Query();
 		$wp_query->query(array(
 		'post_type'=>'athlete',
@@ -64,7 +69,7 @@ $comingSoon = get_field('coming_soon', 'option');
 			array(
 				'taxonomy' => 'athlete_type', // your custom taxonomy
 				'field' => 'slug',
-				'terms' => array( 'routesetter' ) // the terms (categories) you created
+				'terms' => array( 'featured-athlete' ) // the terms (categories) you created
 			)
 		)
 	));
@@ -94,8 +99,9 @@ $comingSoon = get_field('coming_soon', 'option');
 
 
 	<?php endwhile; endif; ?>
-
-
+<section class="divider">
+	<h2>Routesetters</h2>
+</section>
 	<?php
 		$wp_query = new WP_Query();
 		$wp_query->query(array(
@@ -105,7 +111,7 @@ $comingSoon = get_field('coming_soon', 'option');
 			array(
 				'taxonomy' => 'athlete_type', // your custom taxonomy
 				'field' => 'slug',
-				'terms' => array( 'featured-athlete' ) // the terms (categories) you created
+				'terms' => array( 'routesetter' ) // the terms (categories) you created
 			)
 		)
 	));
