@@ -47,7 +47,7 @@
 			<!-- <div class="thing">Presented By</div> -->
 			<div class="image">
 				<a href="https://usnwc.org" target="_blank">
-					<img src="<?php bloginfo('template_url'); ?>/images/presented.png">
+					<img src="<?php bloginfo('template_url'); ?>/images/Whitewater.png">
 				</a>
 			</div>
 		</div>
