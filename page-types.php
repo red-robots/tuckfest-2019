@@ -44,6 +44,10 @@ get_header(); ?>
 				$type = 'yoga_day';
 				$slug = 'yoga-day';
 			}
+			}elseif(is_page(3147)) {
+				$type = 'demo_clinic_type';
+				$slug = 'demo-clinic-type';
+			}
 			
 			$terms = get_terms( $type , array(
 				 'hide_empty' => false,
