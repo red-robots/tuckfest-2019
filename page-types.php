@@ -43,7 +43,6 @@ get_header(); ?>
 			}elseif(is_page(2131)) {
 				$type = 'yoga_day';
 				$slug = 'yoga-day';
-			}
 			}elseif(is_page(3147)) {
 				$type = 'demo_clinic_type';
 				$slug = 'demo-clinic-type';
