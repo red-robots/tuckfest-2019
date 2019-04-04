@@ -193,6 +193,10 @@ $arg = array(
 );
 $events = get_posts($arg);
 
+// echo '<pre>';
+// print_r($events);
+// echo '</pre>';
+
 $day_option['thursday'] = array(
 						'start'=>'thursday_time_p',
 						'end'=>'thursday_time_p_end',
@@ -217,7 +221,7 @@ $day_option['sunday'] = array(
 $postList = array();
 if ( $events ) {  
 	foreach($events as $row) {
-
+		// setup_postdata( $post );
 		$theID = $row->ID;
 		$postType = $row->post_type;
 		$event_name = $row->post_title;
@@ -305,10 +309,24 @@ foreach($day_option as $day_name => $val ) {
 			if( $postType == 'music' ) {
 				$classes .= ' music';
 			}
+			// if( $postType == 'demo_clinic' ) {
+			// 	$classes .= ' film';
+			// }
 
 			if( $postType == 'demo_clinic' ) {
-				$classes .= ' demos';
+				$termz = get_the_terms($post_id, 'demo_clinic_type');
+				foreach ( $termz as $t ) {
+					$classes .= ' '.$t->slug;
+				}
+				// $classes .= $post_id;
 			}
+			// $demC = get_the_terms($post_id, 'demo_clinic');
+			// if($demC) {
+			// 	foreach( $demC as $dem ) {
+			// 		$dem = $dem->slug;
+			// 		$classes .= ' ' . $dem;
+			// 	}
+			// }
 
 			if( $postType == 'yoga' ) {
 				$classes .= ' yoga';
@@ -335,7 +353,7 @@ foreach($day_option as $day_name => $val ) {
 				} elseif( $postType == 'demo_clinic') {
 					$taxSlug = 'demo-clinic-type';
 					$tax = 'demo_clinic_type';
-					$type = 'demos';
+					$type = '';
 				} elseif( $postType == 'yoga') {
 					$taxSlug = 'yoga-day';
 					$tax = 'yoga_day';
