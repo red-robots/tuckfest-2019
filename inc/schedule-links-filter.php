@@ -114,6 +114,8 @@ endif;
 $second[] = array( 'name' => 'Music', 'alt' => 'Music' );
 $second[] = array( 'name' => 'Demos', 'alt' => 'Demos' );
 $second[] = array( 'name' => 'Yoga', 'alt' => 'Yoga' );
+$second[] = array( 'name' => 'Clinics', 'alt' => 'Clinics' );
+$second[] = array( 'name' => 'Films', 'alt' => 'Films' );
 
 // alphabetize the dropdown.
 
