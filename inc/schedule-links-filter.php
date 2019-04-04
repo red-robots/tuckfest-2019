@@ -63,6 +63,8 @@ $i=0;
 */
 // we'll store terms in this array so we don't repeat buttons of the same name.
 $second = array();
+$altN = array();
+$combo = array();
 
 $wp_query = new WP_Query();
 $wp_query->query(array(
@@ -81,9 +83,24 @@ if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->th
 		if($terms){
 			foreach ($terms as $term) {
 				$day = $term->name;
+				$altName = get_field('alt_name', $term);
+				//echo $altName.'</br>';
+				if( $altName == '' ) {
+					$altName = $day;
+				}
+				
+				// echo '<pre>';
+				// print_r($term);
+				// echo '</pre>';
+
 				// if we havn't added the day into the array, add it. Let's not repeat ourselves.
-				if( !in_array($day, $second) ) {
-					$second[] = $day;
+				if( !in_array($day, array_column($second, 'name') ) ) {
+					// old method for a simple array
+					// $second[] = $day;
+
+					// new method with Alt name for menu dropdown
+					$second[] = array( 'name' => $day, 'alt' => $altName );
+					
 				}
 			}
 		}
@@ -91,13 +108,34 @@ if ($wp_query->have_posts()) :  while ($wp_query->have_posts()) :  $wp_query->th
 	endwhile; 
 endif; 
 
+// $combo[] = array_merge($second, $altN);
+
 // let's get music and yoga in here manually just because
-$second[] = 'Music';
-$second[] = 'Demos';
-$second[] = 'Yoga';
+$second[] = array( 'name' => 'Music', 'alt' => 'Music' );
+$second[] = array( 'name' => 'Demos', 'alt' => 'Demos' );
+$second[] = array( 'name' => 'Yoga', 'alt' => 'Yoga' );
 
 // alphabetize the dropdown.
-sort($second);
+
+// old method
+// sort($second);
+
+// new method for multidimensional array
+function array_sort_by_column(&$arr, $col, $dir = SORT_ASC) {
+    $sort_col = array();
+    foreach ($arr as $key=> $row) {
+        $sort_col[$key] = $row[$col];
+    }
+
+    array_multisort($sort_col, $dir, $arr);
+}
+
+
+array_sort_by_column($second, 'name');
+
+// echo '<pre>';
+// print_r($second);
+// echo '</pre>';
 
 // we Queried Everything for the Day's now let's create the buttons.
 
@@ -114,13 +152,14 @@ sort($second);
 		
 			foreach ($second as $button) { 
 				// sanitize it.
-				$filterString = sanitize_title_with_dashes($button);
+				$filterString = sanitize_title_with_dashes($button['name']);
+				$bName = $button['alt'];
 				// grab the first 4 characters so multi names can still link
 				// $str = substr($filterString, 0, 4);
 				?>
 				<!-- <button class="filbutton button" data-filter=".<?php echo $filterString; ?>"><?php echo $button; ?></button> -->
 
-<option value="#filter-type-<?php echo $filterString; ?>" data-filter-value=".<?php echo $filterString; ?>"><?php echo $button; ?></option>			<?php }
+<option value="#filter-type-<?php echo $filterString; ?>" data-filter-value=".<?php echo $filterString; ?>"><?php echo $bName; ?></option>			<?php }
 		?>
 		</select>
 	<!-- </div> -->
