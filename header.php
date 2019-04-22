@@ -213,6 +213,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    			<a href="<?php bloginfo('url'); ?>/about/faqs/">FAQ's</a>
 	    		</li>
 	    		<li>
+	    			<a href="<?php bloginfo('url'); ?>/about/tuck-fest-insiders-guide/">Tuck Fest Insider’s Guide</a>
+	    		</li>
+	    		<li>
 	    			<a href="<?php bloginfo('url'); ?>/about/contact/">Contact</a>
 	    		</li>
 	    		<li>
