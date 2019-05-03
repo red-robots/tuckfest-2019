@@ -22,7 +22,11 @@ get_header(); ?>
 			$wp_query = new WP_Query(array('post_status'=>'private','pagename'=>'home'));
 			if ( have_posts() ) : the_post(); 
 
-				get_template_part('inc/banner'); ?>
+				get_template_part('inc/banner'); 
+
+				the_content();
+
+				?>
 				
 			<?php endif; ?>
 
